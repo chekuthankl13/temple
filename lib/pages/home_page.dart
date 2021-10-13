@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:temple/assets/ticons_icons.dart';
 import 'package:temple/sections/about.dart';
 import 'package:temple/sections/buttontab.dart';
 import 'package:temple/sections/deties.dart';
@@ -22,6 +23,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var red = Colors.blue.shade50;
+    var white = Colors.white;
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: CustomScrollView(slivers: [
@@ -35,60 +38,67 @@ class _MyHomePageState extends State<MyHomePage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                
                 ButtonTabs(
                   children: [
                     ButtonIcon(
+                      clr: value == 0 ? red : white,
                       onPressed: () {
                         setState(() {
                           value = 0;
                         });
                       },
-                      icons: Icons.update,
+                      icons:Ticons.updates,
                       txt: 'Update',
                     ),
                     ButtonIcon(
+                      clr: value == 1 ? red : Colors.white,
                       onPressed: () {
                         setState(() {
                           value = 1;
                         });
                       },
-                      icons: Icons.home_filled,
+                      icons:Ticons.deities,
                       txt: 'Deties',
                     ),
                     ButtonIcon(
+                      clr: value == 2 ? red : Colors.white,
                       onPressed: () {
                         setState(() {
                           value = 2;
                         });
                       },
-                      icons: Icons.monetization_on_outlined,
+                      icons:Ticons.offering,
                       txt: 'Offerings',
                     ),
                     ButtonIcon(
+                      clr: value == 3 ? red : Colors.white,
                       onPressed: () {
                         setState(() {
                           value = 3;
                         });
                       },
-                      icons: Icons.search,
+                      icons:Ticons.about,
                       txt: 'About',
                     ),
                     ButtonIcon(
+                      clr: value == 4 ? red : Colors.white,
                       onPressed: () {
                         setState(() {
                           value = 4;
                         });
                       },
-                      icons: Icons.photo,
+                      icons: Ticons.gallery,
                       txt: 'photos',
                     ),
                     ButtonIcon(
+                      clr: value == 5 ? red : Colors.white,
                       onPressed: () {
                         setState(() {
                           value = 5;
                         });
                       },
-                      icons: Icons.video_collection,
+                      icons: Ticons.gallery,
                       txt: 'videos',
                     ),
                   ],

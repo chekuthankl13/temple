@@ -147,6 +147,9 @@ class Updates extends StatelessWidget {
             children: [
               Row(
                 children: [
+                  const SizedBox(
+                    width: 10,
+                  ),
                   InkWell(
                     onTap: () {
                       // ignore: avoid_print
@@ -183,6 +186,9 @@ class Updates extends StatelessWidget {
                     size: 20,
                     color: Colors.black26,
                   ),
+                  SizedBox(
+                    width: 10,
+                  ), 
                 ],
               )
             ],

@@ -48,7 +48,7 @@ class _DetiesState extends State<Deties> {
         padding: const EdgeInsets.only(left: 10),
         child: ListTile(
           title: Text(
-            name,
+            name,style: TextStyle(fontSize: 13),
           ),
         ),
       );

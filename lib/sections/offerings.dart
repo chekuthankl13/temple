@@ -41,7 +41,7 @@ class _OfferingsState extends State<Offerings> {
   Widget tilename(String name) => Padding(
         padding: const EdgeInsets.only(left: 10),
         child: ListTile(
-          title: Text(name),
+          title: Text(name,style: TextStyle(fontSize: 13)),
         ),
       );
 }

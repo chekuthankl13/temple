@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:temple/widgets/Buttons/button1.dart';
+
 import 'package:temple/widgets/Buttons/button2.dart';
 
 class Header extends StatefulWidget {
@@ -29,19 +29,16 @@ class _HeaderState extends State<Header> {
                   image: AssetImage('assets/bg.jpg'), fit: BoxFit.cover),
             ),
           ),
-          const Positioned(
-            top: 50,
-            right: 10,
-            child: Button1(),
-          ),
+         
           const Positioned(
             top: 210,
-            right: 3,
+            right: 10,
             child: SizedBox(
               width: 230,
-              height: 70,
+              height: 60,
               
                 child: Text(
+                  
                   'Kumaranallur Karthiyani Devi Temple ',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -76,10 +73,10 @@ class _HeaderState extends State<Header> {
             ),
           ),
           Positioned(
-            top: 230,
+            top: 206,
             left: 30,
             child: Container(
-              height: 80,
+              height: 95,
               width: 80,
               decoration: BoxDecoration(
                   image: const DecorationImage(
