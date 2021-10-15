@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
       title: 'Temple',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'KumbhSans',
-        primarySwatch: Colors.blue,
+        fontFamily: 'KumbhSans', colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.grey[400]),
+        primaryColor: const Color(0XFF003870),
       ),
       home: const MyHomePage(),
     );

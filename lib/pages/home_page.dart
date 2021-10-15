@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:temple/assets/ticons_icons.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:temple/sections/about.dart';
 import 'package:temple/sections/buttontab.dart';
 import 'package:temple/sections/deties.dart';
@@ -30,15 +30,12 @@ class _MyHomePageState extends State<MyHomePage> {
       body: CustomScrollView(slivers: [
         SliverPersistentHeader(
           pinned: true,
-          // floating: true,
-
           delegate: CustomSliverAppBarDelegate(expandedHeight: 340),
         ),
         SliverToBoxAdapter(
           child: SingleChildScrollView(
             child: Column(
               children: [
-                
                 ButtonTabs(
                   children: [
                     ButtonIcon(
@@ -48,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           value = 0;
                         });
                       },
-                      icons:Ticons.updates,
+                      icons: SvgPicture.asset('assets/icons/Update.svg'),
                       txt: 'Update',
                     ),
                     ButtonIcon(
@@ -58,8 +55,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           value = 1;
                         });
                       },
-                      icons:Ticons.deities,
-                      txt: 'Deties',
+                      icons: SvgPicture.asset('assets/icons/Prathista.svg'),
+                      txt: 'Deities',
                     ),
                     ButtonIcon(
                       clr: value == 2 ? red : Colors.white,
@@ -68,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           value = 2;
                         });
                       },
-                      icons:Ticons.offering,
+                      icons: SvgPicture.asset('assets/icons/Offering.svg'),
                       txt: 'Offerings',
                     ),
                     ButtonIcon(
@@ -78,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           value = 3;
                         });
                       },
-                      icons:Ticons.about,
+                      icons: SvgPicture.asset('assets/icons/Contact.svg'),
                       txt: 'About',
                     ),
                     ButtonIcon(
@@ -88,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           value = 4;
                         });
                       },
-                      icons: Ticons.gallery,
+                      icons: SvgPicture.asset('assets/icons/photo.svg'),
                       txt: 'photos',
                     ),
                     ButtonIcon(
@@ -98,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           value = 5;
                         });
                       },
-                      icons: Ticons.gallery,
+                      icons: SvgPicture.asset('assets/icons/photo.svg'),
                       txt: 'videos',
                     ),
                   ],
@@ -114,9 +111,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ? const About()
                                 : value == 4
                                     ? const Photo()
-                                    : value ==5
-                                    ? const Videos()
-                                    : const Updates()
+                                    : value == 5
+                                        ? const Videos()
+                                        : const Updates()
               ],
             ),
           ),
@@ -146,17 +143,14 @@ class CustomSliverAppBarDelegate extends SliverPersistentHeaderDelegate {
         opacity: appear(shrinkOffset),
         child: AppBar(
           backgroundColor: Colors.black,
-          title:   const Text(
-                'Kumaranallur Karthiyani  Devi  Temple',
-                // softWrap: true,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: 15,
-                ),
-              ),
-            
-          
+          title: const Text(
+            'Kumaranallur Karthiyani  Devi  Temple',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              fontSize: 15,
+            ),
+          ),
         ),
       );
 

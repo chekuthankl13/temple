@@ -12,7 +12,6 @@ class _DetiesState extends State<Deties> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      // padding: const EdgeInsets.only(top: 15),
       children: [
         Tile(name: 'Karthiyani Devi', maindeitie: true, children: [
           tilename('Nivedyam'),
@@ -45,10 +44,14 @@ class _DetiesState extends State<Deties> {
   }
 
   Widget tilename(String name) => Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: ListTile(
-          title: Text(
-            name,style: TextStyle(fontSize: 13),
+        padding: const EdgeInsets.only(left: 10, top: 0),
+        child: SizedBox(
+          height: 40,
+          child: ListTile(
+            title: Text(
+              name,
+              style: const TextStyle(fontSize: 13),
+            ),
           ),
         ),
       );

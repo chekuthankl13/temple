@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:temple/widgets/Tile/category.dart';
 import 'package:temple/widgets/Tile/tile.dart';
 
 class Offerings extends StatefulWidget {
@@ -14,34 +15,172 @@ class _OfferingsState extends State<Offerings> {
     return Column(
       children: [
         Tile(name: 'Nivedyam', children: [
-          tilename('Karthiyani Devi'),
-          tilename('Manibhooshanm'),
-          tilename('Sarppam'),
+          Category(
+            name: 'Vella Naivedyam',
+            detiename: 'Karthiyani Devi',
+            onpressed: () => print('book offering'),
+          ),
+          Category(
+            name: 'Chathussatham 1',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Chathussatham 1/2',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Chathussatham 1/4',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Kadumpayasam',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Koottopayasam',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Arunavazhi',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Valiya Koottupayasam',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
         ]),
         Tile(name: 'Pushpanjali / Archana', children: [
-          tilename('Badrakali'),
-          tilename('Lord Shiva'),
-          tilename('Karthiyani Devi'),
+          Category(
+            name: 'Moolamanthra Archana',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Bhagya Sooktham',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Shree Sookatham',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Purusha Sookatham',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Vidhya Saaraswatha Manthram',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Vidhya Gopalamanthram',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Swayanmvara Manthram',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Aikyamathya Sookatham',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Mriyunjaya Manthram',
+            detiename: 'Lord Shiva',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Mahadeva Moolamanthram',
+            detiename: 'Lord Shiva',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Raktha Pushpanjali',
+            detiename: 'Badrakali',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Shatru Samhara Pushpanajali',
+            detiename: 'Badrakali',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Guruthi Pushpanajali',
+            detiename: 'Badrakali',
+            onpressed: null,
+          ),
         ]),
-        Tile(name: 'Homam', children: [tilename('Ganapathi')]),
+        Tile(name: 'Homam', children: [
+          Category(
+            name: 'Ganapathi Hommam',
+            detiename: 'Ganapathi',
+            onpressed: null,
+          ),
+        ]),
         Tile(name: 'Mala / Vilaku', children: [
-          tilename('Badrakali'),
-          tilename('Lord Shiva'),
-          tilename('Karthiyani Devi'),
+          Category(
+            name: 'Mala',
+            detiename: 'Karthiyani Devi \n Lord Shiva',
+            onpressed: null,
+          ),
+          Category(
+            name: ' katti Mala',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Niramala',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Bhadra Deepam',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Koovala Mala',
+            detiename: 'Lord Shiva',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Chembarathi Mala',
+            detiename: 'Badrakali',
+            onpressed: null,
+          ),
         ]),
         Tile(name: 'Abhishekam', children: [
-          tilename('Karthiyani Devi'),
-          tilename('Lord Shiva'),
-          tilename('Badrakali'),
-        ])
+          Category(
+            name: 'Manjal Abhishekam ',
+            detiename: 'Karthiyani Devi',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Jala Dhaara',
+            detiename: 'Lord Shiva',
+            onpressed: null,
+          ),
+          Category(
+            name: 'Karikku Abhishekam ',
+            detiename: 'Badrakali',
+            onpressed: null,
+          ),
+        ]),
+        const SizedBox(height: 10)
       ],
     );
   }
-
-  Widget tilename(String name) => Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: ListTile(
-          title: Text(name,style: TextStyle(fontSize: 13)),
-        ),
-      );
 }

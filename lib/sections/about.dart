@@ -49,13 +49,11 @@ class About extends StatelessWidget {
       height: 150,
       width: MediaQuery.of(context).size.width,
       child: Text(
-
         txt,
         style: const TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.black45,
           wordSpacing: 2,
-
         ),
       ),
     );

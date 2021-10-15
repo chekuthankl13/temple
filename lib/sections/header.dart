@@ -15,7 +15,7 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      // color: Colors.black12,
+      
       height: 330,
       width: MediaQuery.of(context).size.width,
       child: Stack(
@@ -24,28 +24,24 @@ class _HeaderState extends State<Header> {
             width: MediaQuery.of(context).size.width,
             height: 300,
             decoration: const BoxDecoration(
-              // color: Colors.black12,
+              
               image: DecorationImage(
-                  image: AssetImage('assets/bg.jpg'), fit: BoxFit.cover),
+                 fit: BoxFit.cover,
+                  image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Mh2uGXpsMV7LCDzvEts6bNRZWCApjkHalA&usqp=CAU')),
             ),
           ),
-         
           const Positioned(
-            top: 210,
+            top: 220,
             right: 10,
             child: SizedBox(
               width: 230,
               height: 60,
-              
-                child: Text(
-                  
-                  'Kumaranallur Karthiyani Devi Temple ',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    
-                    fontSize: 20,
-                  
+              child: Text(
+                'Kumaranallur Karthiyani Devi Temple  ',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontSize: 20,
                 ),
               ),
             ),
@@ -65,22 +61,22 @@ class _HeaderState extends State<Header> {
             ),
           ),
           const Positioned(
-            top: 263,
+            top: 293,
             right: 30,
             child: Button2(
               onpressed: null,
-              txt: 'Follow',
+              txt: '5',
             ),
           ),
           Positioned(
-            top: 206,
+            top: 220,
             left: 30,
             child: Container(
-              height: 95,
+              height: 90,
               width: 80,
               decoration: BoxDecoration(
                   image: const DecorationImage(
-                      image: AssetImage('assets/pi.jpg'), fit: BoxFit.cover),
+                      image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU'), fit: BoxFit.cover),
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(
                     color: Colors.white,

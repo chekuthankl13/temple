@@ -11,8 +11,8 @@ class Updates extends StatelessWidget {
     return Column(
       children: [
         posts(
-          avatar: 'assets/pi.jpg',
-          img: 'assets/bg.jpg',
+          avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU',
+          img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAdtuPCilKq3ahxpaPCpyXT-PLWVSoJO6LLA&usqp=CAU',
           comment: '5',
           like: '100',
           name: 'Yammarakunlgara Sree Maha ganapathy ',
@@ -21,13 +21,13 @@ class Updates extends StatelessWidget {
         ),
         space(),
         posts(
-          avatar: 'assets/pi3.jpg',
-          img: 'assets/bg.jpg',
+          avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU',
+          img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ_TDVNlkVIzqEsFV6-J1AkttLb7XirfTBrA&usqp=CAU',
           comment: '5',
           like: '100',
           name: 'Kumaranallur Karthiyani Devi Temple',
           time: '12 h',
-          txt: 'i^m rich as ******',
+          txt: 'karthikadeepam festival',
         ),
       ],
     );
@@ -69,7 +69,7 @@ class Updates extends StatelessWidget {
                             // color: Colors.red,
                             shape: BoxShape.circle,
                             image: DecorationImage(
-                                image: AssetImage(avatar), fit: BoxFit.cover),
+                                image: NetworkImage(avatar), fit: BoxFit.cover),
                           ),
                         ),
                         Positioned(
@@ -137,7 +137,7 @@ class Updates extends StatelessWidget {
             height: 140,
             width: 320,
             decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage(img), fit: BoxFit.cover),
+              image: DecorationImage(image: NetworkImage(img), fit: BoxFit.cover),
               borderRadius: BorderRadius.circular(5),
             ),
           ),
