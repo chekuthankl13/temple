@@ -23,13 +23,15 @@ class Tile extends StatelessWidget {
           contentPadding: const EdgeInsets.only(left: 10),
           child: ExpansionTile(
             title: Row(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   name,
                   style: const TextStyle(
                     color: Colors.black,
-                    fontSize: 17,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 15,
                   ),
                 ),
                 maindeitie

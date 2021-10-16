@@ -15,7 +15,6 @@ class Button2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        space(),
         const Icon(
           Icons.people,
           size: 15,
@@ -26,11 +25,12 @@ class Button2 extends StatelessWidget {
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         space(),
-        const Text(
-          'Followers',
-          style: TextStyle(fontWeight: FontWeight.bold),
+        const Text('Followers',
+            style: TextStyle(
+                fontWeight: FontWeight.bold, color: Color(0xFF616161))),
+        const SizedBox(
+          width: 50,
         ),
-        space(),
         Container(
           height: 20,
           width: 50,
@@ -61,7 +61,7 @@ class Button2 extends StatelessWidget {
 
   SizedBox space() {
     return const SizedBox(
-      width: 10,
+      width: 5,
     );
   }
 }

@@ -67,7 +67,9 @@ flutter:
     - family: KumbhSans
       fonts:
         - asset: assets/fonts/KumbhSans-Bold.ttf
+          weight: 700
         - asset: assets/fonts/KumbhSans-Light.ttf
+          weight: 100
         - asset: assets/fonts/KumbhSans-Regular.ttf
 
   

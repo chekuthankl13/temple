@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:temple/widgets/Buttons/button3.dart';
+import 'package:temple/widgets/posts.dart';
 
 class Updates extends StatelessWidget {
   const Updates({
@@ -9,192 +9,30 @@ class Updates extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        posts(
-          avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU',
-          img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAdtuPCilKq3ahxpaPCpyXT-PLWVSoJO6LLA&usqp=CAU',
-          comment: '5',
-          like: '100',
+      children: const [
+        Posts(
+          avatar:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU',
           name: 'Yammarakunlgara Sree Maha ganapathy ',
           time: '12 h',
           txt: 'festival of light and happy',
-        ),
-        space(),
-        posts(
-          avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU',
-          img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ_TDVNlkVIzqEsFV6-J1AkttLb7XirfTBrA&usqp=CAU',
-          comment: '5',
+          img:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAdtuPCilKq3ahxpaPCpyXT-PLWVSoJO6LLA&usqp=CAU',
           like: '100',
+          comment: '5',
+        ),
+        Posts(
+          avatar:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU',
           name: 'Kumaranallur Karthiyani Devi Temple',
           time: '12 h',
           txt: 'karthikadeepam festival',
+          img:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ_TDVNlkVIzqEsFV6-J1AkttLb7XirfTBrA&usqp=CAU',
+          like: '100',
+          comment: '5',
         ),
       ],
-    );
-  }
-
-  Container posts(
-      {required String avatar,
-      required String name,
-      required String time,
-      required String txt,
-      required String img,
-      required String like,
-      required String comment}) {
-    return Container(
-      width: 330,
-      padding: const EdgeInsets.all(15),
-      decoration: BoxDecoration(boxShadow: const [
-        BoxShadow(
-          color: Colors.black12,
-        )
-      ], color: Colors.white, borderRadius: BorderRadius.circular(15)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  SizedBox(
-                    height: 40,
-                    width: 40,
-                    child: Stack(
-                      children: [
-                        Container(
-                          height: 30,
-                          width: 30,
-                          decoration: BoxDecoration(
-                            // color: Colors.red,
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                                image: NetworkImage(avatar), fit: BoxFit.cover),
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 10,
-                          right: 5,
-                          child: Container(
-                            height: 15,
-                            width: 15,
-                            decoration: BoxDecoration(
-                              color: Colors.blue,
-                              shape: BoxShape.circle,
-                              border:
-                                  Border.all(color: Colors.white, width: 1.5),
-                            ),
-                            child: const Icon(
-                              Icons.place,
-                              size: 10,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  space(),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        width: 170,
-                        child: Text(
-                          name,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.black54,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        time,
-                        style: const TextStyle(fontSize: 10),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              // const Button2(
-              //   onpressed: null,
-              //   txt: 'Book Oferring',
-              // ),
-              const Button3(onpressed: null, txt: 'Book Offering')
-            ],
-          ),
-          space(),
-          Text(
-            txt,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-          ),
-          space(),
-          Container(
-            height: 140,
-            width: 320,
-            decoration: BoxDecoration(
-              image: DecorationImage(image: NetworkImage(img), fit: BoxFit.cover),
-              borderRadius: BorderRadius.circular(5),
-            ),
-          ),
-          space(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      // ignore: avoid_print
-                      print('clicked');
-                    },
-                    child: const Icon(
-                      Icons.thumb_up_alt_outlined,
-                      size: 20,
-                      color: Colors.black26,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(like),
-                  const SizedBox(
-                    width: 25,
-                  ),
-                  const Icon(
-                    Icons.chat_bubble_outline,
-                    size: 20,
-                    color: Colors.black26,
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(comment),
-                ],
-              ),
-              Row(
-                children: const [
-                  Icon(
-                    Icons.file_upload_outlined,
-                    size: 20,
-                    color: Colors.black26,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ), 
-                ],
-              )
-            ],
-          )
-        ],
-      ),
     );
   }
 

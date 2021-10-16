@@ -18,27 +18,23 @@ class Category extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTileTheme(
-      contentPadding: const EdgeInsets.only(left: 15, top: 0),
+      contentPadding: const EdgeInsets.only(left: 10, top: 0),
       child: ExpansionTile(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 15),
-              child: Text(
-                name,
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 15,
-                ),
-              ),
+        title: Padding(
+          padding: const EdgeInsets.only(left: 15),
+          child: Text(
+            name,
+            style: const TextStyle(
+              color: Colors.black,
+              fontSize: 15,
             ),
-          ],
+          ),
         ),
         children: [
           ListTile(
+            // tileColor: Colors.amberAccent,
             contentPadding:
-                const EdgeInsets.symmetric(horizontal: 50, vertical: 0.0),
+                const EdgeInsets.symmetric(horizontal: 50,),
             title: Text(detiename, style: const TextStyle(fontSize: 13)),
             trailing: Button3(onpressed: onpressed, txt: 'Book Now'),
           ),

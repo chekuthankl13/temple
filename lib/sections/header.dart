@@ -15,68 +15,79 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      
-      height: 330,
+      // height: 200,
       width: MediaQuery.of(context).size.width,
       child: Stack(
         children: [
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width,
-            height: 300,
-            decoration: const BoxDecoration(
-              
-              image: DecorationImage(
-                 fit: BoxFit.cover,
-                  image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Mh2uGXpsMV7LCDzvEts6bNRZWCApjkHalA&usqp=CAU')),
+            // height: 300,
+            
+            child:
+            AspectRatio(aspectRatio: 16/9 ,
+            child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Mh2uGXpsMV7LCDzvEts6bNRZWCApjkHalA&usqp=CAU',fit: BoxFit.cover,),
             ),
           ),
-          const Positioned(
-            top: 220,
-            right: 10,
+          Positioned(
+            top: 150,
+            left: MediaQuery.of(context).size.width / 3.3,
             child: SizedBox(
-              width: 230,
-              height: 60,
-              child: Text(
-                'Kumaranallur Karthiyani Devi Temple  ',
+              width: MediaQuery.of(context).size.width / 1.5,
+              // width:  Media,
+              height: 80,
+              child: const Text(
+                'Kumaranallur Karthiyani Devi Temple ',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
-                  fontSize: 20,
+                  shadows: [
+                    Shadow(
+                      color: Colors.black,
+                    ),
+                    Shadow(
+                      color: Colors.black87,
+                    )
+                  ],
+                  // overflow: TextOverflow.ellipsis,
+                  fontSize: 17,
                 ),
               ),
             ),
           ),
           Positioned(
-            top: 280,
+            top: 195,
             child: Container(
               padding: const EdgeInsets.all(10),
               width: MediaQuery.of(context).size.width,
-              height: 50,
+              height: 80,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10)),
                 color: Color(0xFFEEEEEE),
+                // color: Colors.red,
               ),
             ),
           ),
           const Positioned(
-            top: 293,
-            right: 30,
+            top: 215,
+            left: 120,
             child: Button2(
               onpressed: null,
               txt: '5',
             ),
           ),
           Positioned(
-            top: 220,
-            left: 30,
+            top: 145,
+            left: MediaQuery.of(context).size.width / 25,
             child: Container(
               height: 90,
-              width: 80,
+              width: 90,
               decoration: BoxDecoration(
                   image: const DecorationImage(
-                      image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU'), fit: BoxFit.cover),
+                      image: NetworkImage(
+                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU'),
+                      fit: BoxFit.cover),
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(
                     color: Colors.white,

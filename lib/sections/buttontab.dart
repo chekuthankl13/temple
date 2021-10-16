@@ -9,11 +9,12 @@ class ButtonTabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 5),
       child: Container(
-        padding: const EdgeInsets.only(top: 10),
-        color: Colors.grey[300],
-        height: 102,
+        padding: const EdgeInsets.only(top: 20),
+       
+        color: Colors.white,
+        height: 115,
         child: ListView(
           scrollDirection: Axis.horizontal,
           padding: const EdgeInsets.only(top: 5, bottom: 1),

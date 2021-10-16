@@ -13,6 +13,9 @@ class _PhotoState extends State<Photo> {
   Widget build(BuildContext context) {
     return Column(
       children: const [
+        SizedBox(
+          height: 10,
+        ),
         Text(
           'PHOTOS',
           style: TextStyle(

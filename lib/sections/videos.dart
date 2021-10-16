@@ -13,6 +13,9 @@ class _VideosState extends State<Videos> {
   Widget build(BuildContext context) {
     return  Column(
       children: const [
+        SizedBox(
+          height: 10,
+        ),
         Text(
           'VIDEOS',
           style: TextStyle(

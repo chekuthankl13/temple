@@ -19,39 +19,41 @@ class ButtonIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          height: 50,
-          width: 50,
-          decoration: BoxDecoration(
-              color: clr,
-              boxShadow: const [
-                BoxShadow(
+    return Container(
+      margin: const EdgeInsets.only(left: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+                color: clr,
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black,
+                  ),
+                  BoxShadow(color: Colors.grey)
+                ],
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(
                   color: Colors.black12,
-                )
-              ],
-              borderRadius: BorderRadius.circular(15)),
-          child: IconButton(
-            onPressed: onPressed,
-            icon: icons,
-            splashColor: Colors.red,
+                )),
+            child: IconButton(
+              onPressed: onPressed,
+              icon: icons,
+              splashColor: Colors.red,
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 15,
-        ),
-        Container(
-          margin: const EdgeInsets.only(left: 10),
-          padding: const EdgeInsets.only(left: 10),
-          height: 20,
-          width: 62,
-          child: Text(
+          const SizedBox(
+            height: 15,
+          ),
+          Text(
             txt,
             style: const TextStyle(fontSize: 10),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

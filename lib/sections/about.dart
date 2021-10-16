@@ -7,6 +7,9 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(
+          height: 10,
+        ),
         heading('ABOUT'),
         contents(context,
             ' Kumaranallor devi temple is considered as one of the most important devi temple among the 108 durgalayas in kerala'),
