@@ -46,7 +46,7 @@ class ButtonIcon extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 15,
+            height: 10,
           ),
           Text(
             txt,

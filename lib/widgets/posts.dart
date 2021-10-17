@@ -9,6 +9,7 @@ class Posts extends StatelessWidget {
   final String img;
   final String like;
   final String comment;
+  final bool video;
 
   const Posts(
       {required this.avatar,
@@ -18,13 +19,14 @@ class Posts extends StatelessWidget {
       required this.img,
       required this.like,
       required this.comment,
+      this.video = false,
       Key? key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width /1.05,
+      width: MediaQuery.of(context).size.width / 1.05,
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.only(top: 10),
       decoration: BoxDecoration(boxShadow: const [
@@ -110,12 +112,18 @@ class Posts extends StatelessWidget {
             txt,
           ),
           space(),
-         
-          
-             AspectRatio(aspectRatio: 4/3,
-            child: Image.network(img, fit: BoxFit.cover,),),
-          
-          space(), 
+          AspectRatio(
+              aspectRatio: 4 / 3,
+              child: video
+                  ? Image.asset(
+                      img,
+                      fit: BoxFit.cover,
+                    )
+                  : Image.network(
+                      img,
+                      fit: BoxFit.cover,
+                    )),
+          space(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

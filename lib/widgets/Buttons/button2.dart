@@ -15,21 +15,23 @@ class Button2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Icon(
-          Icons.people,
-          size: 15,
-        ),
+        const Icon(Icons.people, size: 15, color: Color(0xFF616161)),
         space(),
         Text(
           txt,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+          style: const TextStyle(
+              fontWeight: FontWeight.bold, color: Color(0xFF616161)),
         ),
         space(),
-        const Text('Followers',
-            style: TextStyle(
-                fontWeight: FontWeight.bold, color: Color(0xFF616161))),
+        const Text(
+          'Followers',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF616161),
+          ),
+        ),
         const SizedBox(
-          width: 50,
+          width: 70,
         ),
         Container(
           height: 20,
