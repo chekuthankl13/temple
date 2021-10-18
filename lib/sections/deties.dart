@@ -19,7 +19,6 @@ class _DetiesState extends State<Deties> {
           tilename('Abhishekam'),
           tilename('Archana'),
           tilename('Mala'),
-          
         ]),
         Tile(name: 'Lord Shiva', children: [
           tilename('Abhishekam'),
@@ -44,22 +43,22 @@ class _DetiesState extends State<Deties> {
     );
   }
 
-  Widget tilename(String name) =>
-   Padding(
+  Widget tilename(String name) => Padding(
         padding: const EdgeInsets.only(left: 15, top: 0),
-        child: SizedBox(
-          height: 40,
-          child:
-           ListTileTheme(
-            contentPadding: const EdgeInsets.all(0),
-            child: ListTile(
-              // tileColor: Colors.red,
-              title: Text(
-                name,
-                style: const TextStyle(fontSize: 13),
+        child: Column(
+          children: [
+            ListTileTheme(
+              contentPadding: const EdgeInsets.all(0),
+              child: ListTile(
+                title: Text(
+                  name,
+                  style: const TextStyle(
+                    fontSize: 13,
+                  ),
+                ),
               ),
             ),
-          ),
+          ],
         ),
       );
 }

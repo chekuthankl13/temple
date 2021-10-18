@@ -15,17 +15,19 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      // height: 200,
       width: MediaQuery.of(context).size.width,
       child: Stack(
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width,
             // height: 300,
-            
-            child:
-            AspectRatio(aspectRatio: 16/9 ,
-            child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Mh2uGXpsMV7LCDzvEts6bNRZWCApjkHalA&usqp=CAU',fit: BoxFit.cover,),
+
+            child: AspectRatio(
+              aspectRatio: 16 / 9,
+              child: Image.network(
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Mh2uGXpsMV7LCDzvEts6bNRZWCApjkHalA&usqp=CAU',
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Positioned(
@@ -33,7 +35,6 @@ class _HeaderState extends State<Header> {
             left: MediaQuery.of(context).size.width / 3.3,
             child: SizedBox(
               width: MediaQuery.of(context).size.width / 1.5,
-              // width:  Media,
               height: 80,
               child: const Text(
                 'Kumaranallur Karthiyani Devi Temple ',
@@ -48,7 +49,6 @@ class _HeaderState extends State<Header> {
                       color: Colors.black87,
                     )
                   ],
-                  // overflow: TextOverflow.ellipsis,
                   fontSize: 17,
                 ),
               ),
@@ -65,12 +65,11 @@ class _HeaderState extends State<Header> {
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10)),
                 color: Color(0xFFEEEEEE),
-                // color: Colors.red,
               ),
             ),
           ),
           const Positioned(
-            top: 215,
+            top: 200,
             left: 120,
             child: Button2(
               onpressed: null,

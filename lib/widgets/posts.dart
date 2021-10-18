@@ -42,54 +42,32 @@ class Posts extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  SizedBox(
+                  Container(
                     height: 40,
                     width: 40,
-                    child: Stack(
-                      children: [
-                        Container(
-                          height: 30,
-                          width: 30,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                                image: NetworkImage(avatar), fit: BoxFit.cover),
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 10,
-                          right: 5,
-                          child: Container(
-                            height: 15,
-                            width: 15,
-                            decoration: BoxDecoration(
-                              color: Colors.blue,
-                              shape: BoxShape.circle,
-                              border:
-                                  Border.all(color: Colors.white, width: 1.5),
-                            ),
-                            child: const Icon(
-                              Icons.place,
-                              size: 10,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      image: DecorationImage(
+                          image: NetworkImage(avatar), fit: BoxFit.cover),
                     ),
                   ),
-                  space(),
+                  const SizedBox(
+                    width: 5,
+                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      const SizedBox(
+                        height: 10,
+                      ),
                       SizedBox(
                         width: 170,
                         child: Text(
                           name,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.black54,
+                            fontSize: 14,
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -98,7 +76,10 @@ class Posts extends StatelessWidget {
                       ),
                       Text(
                         time,
-                        style: const TextStyle(fontSize: 10),
+                        style: const TextStyle(
+                          fontSize: 10,
+                          color: Colors.black54,
+                        ),
                       ),
                     ],
                   ),
@@ -112,17 +93,20 @@ class Posts extends StatelessWidget {
             txt,
           ),
           space(),
-          AspectRatio(
-              aspectRatio: 4 / 3,
-              child: video
-                  ? Image.asset(
-                      img,
-                      fit: BoxFit.cover,
-                    )
-                  : Image.network(
-                      img,
-                      fit: BoxFit.cover,
-                    )),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(5),
+            child: AspectRatio(
+                aspectRatio: 4 / 3,
+                child: video
+                    ? Image.asset(
+                        img,
+                        fit: BoxFit.cover,
+                      )
+                    : Image.network(
+                        img,
+                        fit: BoxFit.cover,
+                      )),
+          ),
           space(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
