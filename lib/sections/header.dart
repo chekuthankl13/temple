@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:temple/widgets/Buttons/button2.dart';
+import 'package:temple/widgets/Buttons/button3.dart';
 
 class Header extends StatefulWidget {
   const Header({
@@ -72,10 +73,13 @@ class _HeaderState extends State<Header> {
             top: 200,
             left: 120,
             child: Button2(
-              onpressed: null,
               txt: '5',
             ),
           ),
+          Positioned(
+              top: 200,
+              right: MediaQuery.of(context).size.width / 25,
+              child: const Button3(onpressed: null, txt: 'Follow')),
           Positioned(
             top: 145,
             left: MediaQuery.of(context).size.width / 25,
