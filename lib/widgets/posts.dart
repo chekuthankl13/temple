@@ -58,7 +58,7 @@ class Posts extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(
-                        height: 10,
+                        height: 6,
                       ),
                       SizedBox(
                         width: 170,
@@ -85,7 +85,10 @@ class Posts extends StatelessWidget {
                   ),
                 ],
               ),
-              const Button3(onpressed: null, txt: 'Book Offering')
+              const Icon(
+                Icons.share,
+                color: Colors.black26,
+              )
             ],
           ),
           space(),
@@ -147,11 +150,7 @@ class Posts extends StatelessWidget {
               ),
               Row(
                 children: const [
-                  Icon(
-                    Icons.file_upload_outlined,
-                    size: 20,
-                    color: Colors.black26,
-                  ),
+                  Button3(onpressed: null, txt: 'Book Offering'),
                   SizedBox(
                     width: 10,
                   ),

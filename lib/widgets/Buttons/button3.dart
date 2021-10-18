@@ -23,7 +23,9 @@ class Button3 extends StatelessWidget {
           style: const TextStyle(
               fontSize: 10,
               fontWeight: FontWeight.bold,
-              color: Color.fromRGBO(33, 48, 197, 1)),
+              
+              color: Color(0XFF003870),
+              ),
         ),
         style: TextButton.styleFrom(
           backgroundColor: Colors.white,

@@ -26,11 +26,11 @@ class _MyHomePageState extends State<MyHomePage> {
     var red = Colors.blue.shade50;
     var white = Colors.white;
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      // backgroundColor: Colors.grey[50],
       body: CustomScrollView(slivers: [
         SliverPersistentHeader(
           pinned: true,
-          delegate: CustomSliverAppBarDelegate(expandedHeight: 250),
+          delegate: CustomSliverAppBarDelegate(expandedHeight: 242),
         ),
         SliverToBoxAdapter(
           child: SingleChildScrollView(
@@ -140,7 +140,7 @@ class CustomSliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   Widget buildAppBar(double shrinkOffset) => Opacity(
         opacity: appear(shrinkOffset),
         child: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: const Color(0XFF003870),
           title: const Text(
             'Kumaranallur Karthiyani  Devi  Temple',
             style: TextStyle(
@@ -153,7 +153,7 @@ class CustomSliverAppBarDelegate extends SliverPersistentHeaderDelegate {
       );
 
   @override
-  double get maxExtent => 250;
+  double get maxExtent => 242;
 
   @override
   double get minExtent => kToolbarHeight + 30;

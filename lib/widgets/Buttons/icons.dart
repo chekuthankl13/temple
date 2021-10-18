@@ -33,9 +33,10 @@ class ButtonIcon extends StatelessWidget {
                 BoxShadow(
                   color: Color(0xFFBDBDBD),
                   blurRadius: 2.0,
-                  spreadRadius: 1.0,
-                  offset: Offset(2.0, 2.0),
+                  spreadRadius: 2.5,
+                  offset: Offset(3.0, 3.0),
                 ),
+                BoxShadow(color: Colors.black12)
               ],
               borderRadius: BorderRadius.circular(15),
             ),

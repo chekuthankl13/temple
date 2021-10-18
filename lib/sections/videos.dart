@@ -16,19 +16,9 @@ class _VideosState extends State<Videos> {
         SizedBox(
           height: 10,
         ),
-        Text(
-          'VIDEOS',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.black45,
-            fontSize: 17,
-          ),
-        ),
         SizedBox(
           height: 10,
         ),
-        
-
         Posts(
           video: true,
           avatar:

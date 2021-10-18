@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Button2 extends StatelessWidget {
+class Followers extends StatelessWidget {
   final String txt;
   final bool follow;
-  const Button2({Key? key, required this.txt, this.follow = false})
+  const Followers({Key? key, required this.txt, this.follow = false})
       : super(key: key);
 
   @override
@@ -20,7 +20,7 @@ class Button2 extends StatelessWidget {
       const Text(
         'Followers',
         style: TextStyle(
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w300,
           color: Color(0xFF616161),
         ),
       ),

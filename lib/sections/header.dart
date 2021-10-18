@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:temple/widgets/Buttons/button2.dart';
+import 'package:temple/widgets/Buttons/followers.dart';
 import 'package:temple/widgets/Buttons/button3.dart';
 
 class Header extends StatefulWidget {
@@ -21,8 +21,6 @@ class _HeaderState extends State<Header> {
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width,
-            // height: 300,
-
             child: AspectRatio(
               aspectRatio: 16 / 9,
               child: Image.network(
@@ -60,24 +58,24 @@ class _HeaderState extends State<Header> {
             child: Container(
               padding: const EdgeInsets.all(10),
               width: MediaQuery.of(context).size.width,
-              height: 80,
+              height: 50,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10)),
-                color: Color(0xFFEEEEEE),
+                color: Color(0xFFFAFAFA),
               ),
             ),
           ),
-          const Positioned(
-            top: 200,
-            left: 120,
-            child: Button2(
+          Positioned(
+            top: 207,
+            left: MediaQuery.of(context).size.width / 3.3,
+            child: const Followers(
               txt: '5',
             ),
           ),
           Positioned(
-              top: 200,
+              top: 207,
               right: MediaQuery.of(context).size.width / 25,
               child: const Button3(onpressed: null, txt: 'Follow')),
           Positioned(

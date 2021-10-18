@@ -8,18 +8,18 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Temple',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'KumbhSans', colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.grey[400]),
+        fontFamily: 'KumbhSans',
+        colorScheme:
+            ColorScheme.fromSwatch().copyWith(secondary: Colors.grey[50]),
         primaryColor: const Color(0XFF003870),
       ),
       home: const MyHomePage(),
     );
   }
 }
-

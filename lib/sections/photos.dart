@@ -16,14 +16,6 @@ class _PhotoState extends State<Photo> {
         SizedBox(
           height: 10,
         ),
-        Text(
-          'PHOTOS',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.black45,
-            fontSize: 17,
-          ),
-        ),
         SizedBox(
           height: 10,
         ),

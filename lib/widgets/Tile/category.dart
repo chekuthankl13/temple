@@ -32,9 +32,10 @@ class Category extends StatelessWidget {
         ),
         children: [
           ListTile(
-            // tileColor: Colors.amberAccent,
-            contentPadding:
-                const EdgeInsets.symmetric(horizontal: 50,),
+            dense: true,
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 50,
+            ),
             title: Text(detiename, style: const TextStyle(fontSize: 13)),
             trailing: Button3(onpressed: onpressed, txt: 'Book Now'),
           ),
