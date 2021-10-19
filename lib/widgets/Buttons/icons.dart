@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:clay_containers/clay_containers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -24,26 +25,27 @@ class ButtonIcon extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
+          ClayContainer(
             height: 50,
             width: 50,
-            decoration: BoxDecoration(
-              color: clr,
-              boxShadow: const [
-                BoxShadow(
-                  color: Color(0xFFBDBDBD),
-                  blurRadius: 2.0,
-                  spreadRadius: 2.5,
-                  offset: Offset(3.0, 3.0),
+            depth: 35,
+            spread: 15,
+            curveType: CurveType.concave,
+            borderRadius: 15,
+            color: Colors.grey[100],
+            child: Container(
+              decoration: BoxDecoration(
+                color: clr,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Center(
+                child: IconButton(
+                  onPressed: onPressed,
+                  icon: icons,
+
+                  // splashColor: Colors.red,
                 ),
-                BoxShadow(color: Colors.black12)
-              ],
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: IconButton(
-              onPressed: onPressed,
-              icon: icons,
-              splashColor: Colors.red,
+              ),
             ),
           ),
           const SizedBox(

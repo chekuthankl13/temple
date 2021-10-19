@@ -26,11 +26,11 @@ class _MyHomePageState extends State<MyHomePage> {
     var red = Colors.blue.shade50;
     var white = Colors.white;
     return Scaffold(
-      // backgroundColor: Colors.grey[50],
+      // backgroundColor: Colors.amber,
       body: CustomScrollView(slivers: [
         SliverPersistentHeader(
           pinned: true,
-          delegate: CustomSliverAppBarDelegate(expandedHeight: 242),
+          delegate: CustomSliverAppBarDelegate(expandedHeight: 335),
         ),
         SliverToBoxAdapter(
           child: SingleChildScrollView(
@@ -153,7 +153,7 @@ class CustomSliverAppBarDelegate extends SliverPersistentHeaderDelegate {
       );
 
   @override
-  double get maxExtent => 242;
+  double get maxExtent => 330;
 
   @override
   double get minExtent => kToolbarHeight + 30;

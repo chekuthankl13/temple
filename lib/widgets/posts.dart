@@ -42,11 +42,13 @@ class _PostsState extends State<Posts> {
     return Container(
       width: MediaQuery.of(context).size.width / 1.05,
       padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.only(top: 10),
+      margin: const EdgeInsets.only(top: 15),
       decoration: BoxDecoration(boxShadow: const [
         BoxShadow(
-          color: Colors.black12,
-        )
+            color: Colors.black12,
+            spreadRadius: 1.5,
+            blurRadius: 4,
+            offset: Offset(3.0, 3.0))
       ], color: Colors.white, borderRadius: BorderRadius.circular(15)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,11 +78,11 @@ class _PostsState extends State<Posts> {
                         height: 6,
                       ),
                       SizedBox(
-                        width: 170,
+                        width: 250,
                         child: Text(
                           widget.name,
                           style: const TextStyle(
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w500,
                             fontSize: 14,
                             color: Colors.black,
                           ),
@@ -116,18 +118,18 @@ class _PostsState extends State<Posts> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(5),
               child: AspectRatio(
-                  aspectRatio: 4 / 3,
-                  child: widget.video
-                      ? YoutubePlayer(
-                          controller: controller,
-                          showVideoProgressIndicator: true,
-                          aspectRatio: 4 / 3,
-                        )
-                      : Image.network(
-                          widget.img,
-                          fit: BoxFit.cover,
-                        ),
-                        ),
+                aspectRatio: 4 / 3,
+                child: widget.video
+                    ? YoutubePlayer(
+                        controller: controller,
+                        showVideoProgressIndicator: true,
+                        aspectRatio: 4 / 3,
+                      )
+                    : Image.network(
+                        widget.img,
+                        fit: BoxFit.cover,
+                      ),
+              ),
             ),
           ),
           space(),
@@ -137,7 +139,7 @@ class _PostsState extends State<Posts> {
               Row(
                 children: [
                   const SizedBox(
-                    width: 10,
+                    width: 15,
                   ),
                   InkWell(
                     onTap: () {

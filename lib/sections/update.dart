@@ -13,7 +13,7 @@ class Updates extends StatelessWidget {
         Posts(
           avatar:
               'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU',
-          name: 'Yammarakunlgara Sree Maha ganapathy ',
+          name: 'Kumaranallur Karthiyani Devi Temple ',
           time: '12 h',
           txt: 'festival of light and happy',
           img:

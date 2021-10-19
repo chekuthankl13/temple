@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:cupertino_icons/cupertino_icons.dart';
+import 'package:temple/widgets/Buttons/button3.dart';
 
 class Followers extends StatelessWidget {
   final String txt;
@@ -8,26 +11,52 @@ class Followers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
-      const Icon(Icons.people, size: 15, color: Color(0xFF616161)),
-      space(),
-      Text(
-        txt,
-        style: const TextStyle(
-            fontWeight: FontWeight.bold, color: Color(0xFF616161)),
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: const [
+              Padding(
+                padding: EdgeInsets.only(left: 27),
+                child: Icon(CupertinoIcons.map),
+              )
+            ],
+          ),
+          Row(
+            children: [
+              Text(
+                txt,
+                style: const TextStyle(
+                    fontWeight: FontWeight.w300, color: Color(0xFF616161)),
+              ),
+              space(),
+              const Text(
+                'Followers',
+                style: TextStyle(
+                  fontWeight: FontWeight.w300,
+                  color: Color(0xFF616161),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: const [
+              Button3(
+                onpressed: null,
+                txt: 'follow',
+                txtclr: Colors.white,
+                clr: Color(0XFF003870),
+              ),
+              SizedBox(
+                width: 10,
+              )
+            ],
+          ),
+        ],
       ),
-      space(),
-      const Text(
-        'Followers',
-        style: TextStyle(
-          fontWeight: FontWeight.w300,
-          color: Color(0xFF616161),
-        ),
-      ),
-      const SizedBox(
-        width: 40,
-      ),
-    ]);
+    );
   }
 
   SizedBox space() {

@@ -4,11 +4,17 @@ class Button3 extends StatelessWidget {
   final void Function()? onpressed;
   final String txt;
   final bool maindeitie;
+  final Color clr;
+  final Color txtclr;
   const Button3(
       {Key? key,
       required this.onpressed,
       required this.txt,
-      this.maindeitie = false})
+      this.maindeitie = false,
+      this.clr = Colors.white,
+      this.txtclr = const Color(0XFF003870)
+      
+      })
       : super(key: key);
 
   @override
@@ -20,17 +26,19 @@ class Button3 extends StatelessWidget {
         onPressed: onpressed,
         child: Text(
           txt,
-          style: const TextStyle(
-              fontSize: 10,
-              fontWeight: FontWeight.bold,
-              
-              color: Color(0XFF003870),
-              ),
+          style:  TextStyle(
+            fontSize: 10,
+            fontWeight: FontWeight.bold,
+            color: txtclr,
+          ),
         ),
         style: TextButton.styleFrom(
-          backgroundColor: Colors.white,
+          backgroundColor: clr,
           shadowColor: Colors.black87,
-          elevation: 8,
+          side: const BorderSide(
+            color: Colors.grey,
+          ),
+          // elevation: 8,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(6),
           ),

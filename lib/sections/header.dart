@@ -21,6 +21,7 @@ class _HeaderState extends State<Header> {
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width,
+            height: 250,
             child: AspectRatio(
               aspectRatio: 16 / 8,
               child: Image.network(
@@ -30,7 +31,7 @@ class _HeaderState extends State<Header> {
             ),
           ),
           Positioned(
-            top: 150,
+            top: 190,
             left: MediaQuery.of(context).size.width / 3.3,
             child: SizedBox(
               width: MediaQuery.of(context).size.width / 1.5,
@@ -54,48 +55,51 @@ class _HeaderState extends State<Header> {
             ),
           ),
           Positioned(
-            top: 195,
+            top: 239,
             child: Container(
               padding: const EdgeInsets.all(10),
               width: MediaQuery.of(context).size.width,
-              height: 50,
+              height: 90,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10)),
-                color: Color(0xFFFAFAFA),
+                // color: Colors.redAccent,
+                color:  Color(0xFFFAFAFA),
+                //  Color(0xFFFAFAFA),
               ),
             ),
           ),
           Positioned(
-            top: 207,
-            left: MediaQuery.of(context).size.width / 3.3,
-            child: const Followers(
-              txt: '5',
-            ),
-          ),
+              top: 249,
+              left: MediaQuery.of(context).size.width / 3.3,
+              child: const Text('Kochi, Kerala',style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFF616161),
+                ),),
+              // const Button3(onpressed: null, txt: 'Follow'),
+              
+              ),
           Positioned(
-              top: 207,
-              right: MediaQuery.of(context).size.width / 25,
-              child: const Button3(onpressed: null, txt: 'Follow')),
-          Positioned(
-            top: 145,
+            top: 175,
             left: MediaQuery.of(context).size.width / 25,
             child: Container(
               height: 90,
               width: 90,
               decoration: BoxDecoration(
-                  image: const DecorationImage(
-                      image: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU'),
-                      fit: BoxFit.cover),
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 3,
-                  )),
+                image: const DecorationImage(
+                    image: NetworkImage(
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU'),
+                    fit: BoxFit.cover),
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(
+                  color: Colors.white,
+                  width: 3,
+                ),
+              ),
             ),
           ),
+          const Positioned(top: 300, child:  Followers(txt: '5.2 k')),
         ],
       ),
     );

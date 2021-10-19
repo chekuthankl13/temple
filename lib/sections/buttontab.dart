@@ -17,7 +17,7 @@ class ButtonTabs extends StatelessWidget {
         height: 115,
         child: ListView(
           scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.only(top: 5, bottom: 1),
+          padding: const EdgeInsets.only(top: 8, bottom: 1),
           children: children,
         ),
       );
