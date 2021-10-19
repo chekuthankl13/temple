@@ -22,7 +22,7 @@ class _HeaderState extends State<Header> {
           SizedBox(
             width: MediaQuery.of(context).size.width,
             child: AspectRatio(
-              aspectRatio: 16 / 9,
+              aspectRatio: 16 / 8,
               child: Image.network(
                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Mh2uGXpsMV7LCDzvEts6bNRZWCApjkHalA&usqp=CAU',
                 fit: BoxFit.cover,

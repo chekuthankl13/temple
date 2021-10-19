@@ -19,27 +19,30 @@ class Category extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTileTheme(
       contentPadding: const EdgeInsets.only(left: 10, top: 0),
-      child: ExpansionTile(
-        title: Padding(
-          padding: const EdgeInsets.only(left: 15),
-          child: Text(
-            name,
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 15,
+      child: Theme(
+        data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+        child: ExpansionTile(
+          title: Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Text(
+              name,
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 15,
+              ),
             ),
           ),
+          children: [
+            ListTile(
+              dense: true,
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: 50,
+              ),
+              title: Text(detiename, style: const TextStyle(fontSize: 13)),
+              trailing: Button3(onpressed: onpressed, txt: 'Book Now'),
+            ),
+          ],
         ),
-        children: [
-          ListTile(
-            dense: true,
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: 50,
-            ),
-            title: Text(detiename, style: const TextStyle(fontSize: 13)),
-            trailing: Button3(onpressed: onpressed, txt: 'Book Now'),
-          ),
-        ],
       ),
     );
   }

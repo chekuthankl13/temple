@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:temple/widgets/Buttons/button3.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class Posts extends StatelessWidget {
+class Posts extends StatefulWidget {
   final String avatar;
   final String name;
   final String time;
@@ -23,6 +24,19 @@ class Posts extends StatelessWidget {
       Key? key})
       : super(key: key);
 
+  @override
+  State<Posts> createState() => _PostsState();
+}
+
+class _PostsState extends State<Posts> {
+  late YoutubePlayerController controller = YoutubePlayerController(
+    initialVideoId: widget.img,
+    // iLnmTe5Q2Qw
+    flags: const YoutubePlayerFlags(
+      autoPlay: false,
+      mute: false,
+    ),
+  );
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,7 +62,8 @@ class Posts extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
                       image: DecorationImage(
-                          image: NetworkImage(avatar), fit: BoxFit.cover),
+                          image: NetworkImage(widget.avatar),
+                          fit: BoxFit.cover),
                     ),
                   ),
                   const SizedBox(
@@ -63,7 +78,7 @@ class Posts extends StatelessWidget {
                       SizedBox(
                         width: 170,
                         child: Text(
-                          name,
+                          widget.name,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
@@ -75,7 +90,7 @@ class Posts extends StatelessWidget {
                         height: 5,
                       ),
                       Text(
-                        time,
+                        widget.time,
                         style: const TextStyle(
                           fontSize: 10,
                           color: Colors.black54,
@@ -93,22 +108,27 @@ class Posts extends StatelessWidget {
           ),
           space(),
           Text(
-            txt,
+            widget.txt,
           ),
           space(),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(5),
-            child: AspectRatio(
-                aspectRatio: 4 / 3,
-                child: video
-                    ? Image.asset(
-                        img,
-                        fit: BoxFit.cover,
-                      )
-                    : Image.network(
-                        img,
-                        fit: BoxFit.cover,
-                      )),
+          InkWell(
+            onTap: () => print('you tap the post'),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(5),
+              child: AspectRatio(
+                  aspectRatio: 4 / 3,
+                  child: widget.video
+                      ? YoutubePlayer(
+                          controller: controller,
+                          showVideoProgressIndicator: true,
+                          aspectRatio: 4 / 3,
+                        )
+                      : Image.network(
+                          widget.img,
+                          fit: BoxFit.cover,
+                        ),
+                        ),
+            ),
           ),
           space(),
           Row(
@@ -133,7 +153,7 @@ class Posts extends StatelessWidget {
                   const SizedBox(
                     width: 10,
                   ),
-                  Text(like),
+                  Text(widget.like),
                   const SizedBox(
                     width: 25,
                   ),
@@ -145,7 +165,7 @@ class Posts extends StatelessWidget {
                   const SizedBox(
                     width: 10,
                   ),
-                  Text(comment),
+                  Text(widget.comment),
                 ],
               ),
               Row(
