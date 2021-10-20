@@ -4,19 +4,40 @@ import 'package:clay_containers/clay_containers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ButtonIcon extends StatelessWidget {
+class ButtonIcon extends StatefulWidget {
   Null Function() onPressed;
   SvgPicture icons;
   String txt;
-  Color clr;
+  bool isPressed;
 
   ButtonIcon({
     Key? key,
     required this.onPressed,
     required this.icons,
     required this.txt,
-    this.clr = Colors.white,
+    this.isPressed = false,
   }) : super(key: key);
+
+  @override
+  State<ButtonIcon> createState() => _ButtonIconState();
+}
+
+class _ButtonIconState extends State<ButtonIcon>
+    with SingleTickerProviderStateMixin {
+  // double firstDepth = 20;
+  // double secondDepth = 20;
+  // late AnimationController _animationController;
+
+  // @override
+  // void initState() {
+  //   _animationController = AnimationController(
+  //     vsync: this,
+  //     duration: Duration(seconds: 3),
+  //   )..addListener(() {
+  //       setState(() {});
+  //     });
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -35,19 +56,18 @@ class ButtonIcon extends StatelessWidget {
             depth: 20,
             spread: 3,
             emboss: true,
-            curveType: CurveType.concave,
+            curveType: widget.isPressed ? CurveType.concave : CurveType.convex,
             borderRadius: 15,
             color: Colors.grey[100],
             child: Container(
               decoration: BoxDecoration(
                 // color: clr,
-                color: clr,
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Center(
                 child: IconButton(
-                  onPressed: onPressed,
-                  icon: icons,
+                  onPressed: widget.onPressed,
+                  icon: widget.icons,
                   // splashColor: Colors.red,
                 ),
               ),
@@ -57,7 +77,7 @@ class ButtonIcon extends StatelessWidget {
             height: 10,
           ),
           Text(
-            txt,
+            widget.txt,
             style: const TextStyle(fontSize: 10),
           ),
         ],

@@ -120,10 +120,17 @@ class _PostsState extends State<Posts> {
               child: AspectRatio(
                 aspectRatio: 4 / 3,
                 child: widget.video
-                    ? YoutubePlayer(
-                        controller: controller,
-                        showVideoProgressIndicator: true,
-                        aspectRatio: 4 / 3,
+                    ? YoutubePlayerBuilder(
+                        player: YoutubePlayer(
+                          controller: controller,
+                          showVideoProgressIndicator: true,
+                          aspectRatio: 4 / 3,
+                        ),
+                        builder: (context, player) {
+                          return Column(
+                            children: [player],
+                          );
+                        },
                       )
                     : Image.network(
                         widget.img,

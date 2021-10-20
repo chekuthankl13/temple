@@ -19,7 +19,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int? value;
+  int value = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,17 +39,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 ButtonTabs(
                   children: [
                     ButtonIcon(
-                      clr: value == 0 ? red : white,
+                      isPressed: value == 0,
                       onPressed: () {
                         setState(() {
                           value = 0;
                         });
                       },
                       icons: SvgPicture.asset('assets/icons/Update.svg'),
-                      txt: 'Update',
+                      txt: 'Updates',
                     ),
                     ButtonIcon(
-                      clr: value == 1 ? red : white,
+                      isPressed: value == 1,
                       onPressed: () {
                         setState(() {
                           value = 1;
@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       txt: 'Deities',
                     ),
                     ButtonIcon(
-                      clr: value == 2 ? red : white,
+                      isPressed: value == 2,
                       onPressed: () {
                         setState(() {
                           value = 2;
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       txt: 'Offerings',
                     ),
                     ButtonIcon(
-                      clr: value == 3 ? red : white,
+                      isPressed: value == 3,
                       onPressed: () {
                         setState(() {
                           value = 3;
@@ -79,23 +79,23 @@ class _MyHomePageState extends State<MyHomePage> {
                       txt: 'About',
                     ),
                     ButtonIcon(
-                      clr: value == 4 ? red : white,
+                      isPressed: value == 4,
                       onPressed: () {
                         setState(() {
                           value = 4;
                         });
                       },
-                      icons: SvgPicture.asset('assets/icons/image-line.svg'),
+                      icons: SvgPicture.asset('assets/icons/Gallery.svg'),
                       txt: 'photos',
                     ),
                     ButtonIcon(
-                      clr: value == 5 ? red : white,
+                      isPressed: value == 5,
                       onPressed: () {
                         setState(() {
                           value = 5;
                         });
                       },
-                      icons: SvgPicture.asset('assets/icons/video.svg'),
+                      icons: SvgPicture.asset('assets/icons/Gallery.svg'),
                       txt: 'videos',
                     ),
                     const SizedBox(
