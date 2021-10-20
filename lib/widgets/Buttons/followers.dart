@@ -19,7 +19,7 @@ class Followers extends StatelessWidget {
           Row(
             children: const [
               Padding(
-                padding: EdgeInsets.only(left: 27),
+                padding: EdgeInsets.only(left: 53),
                 child: Icon(CupertinoIcons.map),
               )
             ],
@@ -29,13 +29,13 @@ class Followers extends StatelessWidget {
               Text(
                 txt,
                 style: const TextStyle(
-                    fontWeight: FontWeight.w300, color: Color(0xFF616161)),
+                    fontWeight: FontWeight.bold, color: Color(0xFF616161)),
               ),
               space(),
               const Text(
                 'Followers',
                 style: TextStyle(
-                  fontWeight: FontWeight.w300,
+                  fontWeight: FontWeight.bold,
                   color: Color(0xFF616161),
                 ),
               ),

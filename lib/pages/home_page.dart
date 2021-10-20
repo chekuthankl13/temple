@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           value = 4;
                         });
                       },
-                      icons: SvgPicture.asset('assets/icons/Gallery.svg'),
+                      icons: SvgPicture.asset('assets/icons/image-line.svg'),
                       txt: 'photos',
                     ),
                     ButtonIcon(
@@ -95,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           value = 5;
                         });
                       },
-                      icons: SvgPicture.asset('assets/icons/Gallery.svg'),
+                      icons: SvgPicture.asset('assets/icons/video.svg'),
                       txt: 'videos',
                     ),
                     const SizedBox(

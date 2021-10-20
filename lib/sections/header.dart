@@ -99,7 +99,7 @@ class _HeaderState extends State<Header> {
               ),
             ),
           ),
-          const Positioned(top: 300, child:  Followers(txt: '5.2 k')),
+          const Positioned(top: 300, right: 15, child:  Followers(txt: '5.2K')),
         ],
       ),
     );
