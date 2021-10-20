@@ -72,7 +72,7 @@ class _HeaderState extends State<Header> {
             top: 249,
             left: MediaQuery.of(context).size.width / 3.3,
             child: const Text(
-              'Kochi, Kerala',
+              '5.7K Followers',
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 color: Color(0xFF616161),
@@ -115,25 +115,24 @@ class _HeaderState extends State<Header> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
-                        // Padding(padding: EdgeInsets.only(bottom: 10)),
-                        Text(
-                          '5.3K',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14,
-                              color: Color(0xFF616161)),
-                        ),
-                        SizedBox(
-                          width: 3,
-                        ),
-                        Text(
-                          'Followers',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: Color(0xFF616161),
-                          ),
-                        ),
+                        // Text(
+                        //   '5.3K',
+                        //   style: TextStyle(
+                        //       fontWeight: FontWeight.bold,
+                        //       fontSize: 14,
+                        //       color: Color(0xFF616161)),
+                        // ),
+                        // SizedBox(
+                        //   width: 3,
+                        // ),
+                        // Text(
+                        //   'Followers',
+                        //   style: TextStyle(
+                        //     fontWeight: FontWeight.bold,
+                        //     fontSize: 14,
+                        //     color: Color(0xFF616161),
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),

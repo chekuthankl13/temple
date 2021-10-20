@@ -24,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     var red = Colors.blue.shade50;
-    var white = const Color(0xFFF2F2F2);
+    var white = const Color(0xFFF5F5F5);
     return Scaffold(
       // backgroundColor: Colors.amber,
       body: CustomScrollView(slivers: [
