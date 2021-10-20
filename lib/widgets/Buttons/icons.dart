@@ -32,14 +32,15 @@ class ButtonIcon extends StatelessWidget {
           ClayContainer(
             height: 50,
             width: 50,
-            depth: 55,
-            spread: 5,
+            depth: 20,
+            spread: 3,
             emboss: true,
             curveType: CurveType.concave,
             borderRadius: 15,
             color: Colors.grey[100],
             child: Container(
               decoration: BoxDecoration(
+                // color: clr,
                 color: clr,
                 borderRadius: BorderRadius.circular(15),
               ),
@@ -47,7 +48,6 @@ class ButtonIcon extends StatelessWidget {
                 child: IconButton(
                   onPressed: onPressed,
                   icon: icons,
-
                   // splashColor: Colors.red,
                 ),
               ),
