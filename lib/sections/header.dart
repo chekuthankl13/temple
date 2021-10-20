@@ -99,7 +99,7 @@ class _HeaderState extends State<Header> {
             ),
           ),
           Positioned(
-            top: 280,
+            top: 290,
             child: SizedBox(
               height: 40,
               width: MediaQuery.of(context).size.width,
@@ -107,27 +107,30 @@ class _HeaderState extends State<Header> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Padding(
-                    padding: EdgeInsets.only(left: 40),
+                    padding: EdgeInsets.only(left: 50),
                     child: Icon(CupertinoIcons.map),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 35),
+                    padding: const EdgeInsets.only(left: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
+                        // Padding(padding: EdgeInsets.only(bottom: 10)),
                         Text(
-                          '5.3 K ',
+                          '5.3K',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
+                              fontSize: 14,
                               color: Color(0xFF616161)),
                         ),
                         SizedBox(
-                          width: 5,
+                          width: 3,
                         ),
                         Text(
                           'Followers',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
+                            fontSize: 14,
                             color: Color(0xFF616161),
                           ),
                         ),
@@ -135,10 +138,10 @@ class _HeaderState extends State<Header> {
                     ),
                   ),
                   const Padding(
-                    padding: EdgeInsets.only(right: 3),
+                    padding: EdgeInsets.only(right: 12, top: 1),
                     child: Button3(
                       onpressed: null,
-                      txt: 'follow',
+                      txt: 'Follow',
                       clr: Color(0XFF003870),
                       txtclr: Colors.white,
                     ),

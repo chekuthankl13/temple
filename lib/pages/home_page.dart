@@ -24,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     var red = Colors.blue.shade50;
-    var white = const Color(0xFFFAFAFA);
+    var white = const Color(0xFFF2F2F2);
     return Scaffold(
       // backgroundColor: Colors.amber,
       body: CustomScrollView(slivers: [
@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       txt: 'Update',
                     ),
                     ButtonIcon(
-                      clr: value == 1 ? red : Colors.white,
+                      clr: value == 1 ? red : white,
                       onPressed: () {
                         setState(() {
                           value = 1;
@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       txt: 'Deities',
                     ),
                     ButtonIcon(
-                      clr: value == 2 ? red : Colors.white,
+                      clr: value == 2 ? red : white,
                       onPressed: () {
                         setState(() {
                           value = 2;
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       txt: 'Offerings',
                     ),
                     ButtonIcon(
-                      clr: value == 3 ? red : Colors.white,
+                      clr: value == 3 ? red : white,
                       onPressed: () {
                         setState(() {
                           value = 3;
@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       txt: 'About',
                     ),
                     ButtonIcon(
-                      clr: value == 4 ? red : Colors.white,
+                      clr: value == 4 ? red : white,
                       onPressed: () {
                         setState(() {
                           value = 4;
@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       txt: 'photos',
                     ),
                     ButtonIcon(
-                      clr: value == 5 ? red : Colors.white,
+                      clr: value == 5 ? red : white,
                       onPressed: () {
                         setState(() {
                           value = 5;
