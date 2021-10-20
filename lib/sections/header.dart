@@ -1,6 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:temple/widgets/Buttons/followers.dart';
 import 'package:temple/widgets/Buttons/button3.dart';
 
 class Header extends StatefulWidget {
@@ -64,22 +64,21 @@ class _HeaderState extends State<Header> {
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10)),
-                // color: Colors.redAccent,
-                color:  Color(0xFFFAFAFA),
-                //  Color(0xFFFAFAFA),
+                color: Color(0xFFFAFAFA),
               ),
             ),
           ),
           Positioned(
-              top: 249,
-              left: MediaQuery.of(context).size.width / 3.3,
-              child: const Text('Kochi, Kerala',style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xFF616161),
-                ),),
-              // const Button3(onpressed: null, txt: 'Follow'),
-              
+            top: 249,
+            left: MediaQuery.of(context).size.width / 3.3,
+            child: const Text(
+              'Kochi, Kerala',
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                color: Color(0xFF616161),
               ),
+            ),
+          ),
           Positioned(
             top: 175,
             left: MediaQuery.of(context).size.width / 25,
@@ -99,7 +98,44 @@ class _HeaderState extends State<Header> {
               ),
             ),
           ),
-          const Positioned(top: 300, child:  Followers(txt: '5.2 k')),
+          Positioned(
+            top: 300,
+            left: MediaQuery.of(context).size.width / 10,
+            child: const Icon(CupertinoIcons.map),
+          ),
+          Positioned(
+            top: 300,
+            left: MediaQuery.of(context).size.width / 3.3,
+            child: Row(
+              children: const [
+                Text(
+                  '5.3 k ',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w300, color: Color(0xFF616161)),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  'Followers',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w300,
+                    color: Color(0xFF616161),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            top: 300,
+            right: MediaQuery.of(context).size.width / 25,
+            child: const Button3(
+              onpressed: null,
+              txt: 'follow',
+              clr: Color(0XFF003870),
+              txtclr: Colors.white,
+            ),
+          ),
         ],
       ),
     );

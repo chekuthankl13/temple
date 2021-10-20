@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:temple/widgets/Buttons/button3.dart';
 
 class Followers extends StatelessWidget {
