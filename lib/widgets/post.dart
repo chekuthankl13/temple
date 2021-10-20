@@ -1,51 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:temple/widgets/Buttons/button3.dart';
+import 'package:temple/widgets/post_media.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class Posts extends StatefulWidget {
-  final String avatar;
+class Post extends StatefulWidget {
+  final Image avatar;
   final String name;
   final String time;
-  final String txt;
-  final String img;
   final String like;
   final String comment;
-  final bool video;
+  final String? img;
+  final String? txt;
+  final String? videoUrl;
 
-  const Posts(
+  const Post(
       {required this.avatar,
       required this.name,
       required this.time,
-      required this.txt,
-      required this.img,
       required this.like,
       required this.comment,
-      this.video = false,
+      this.txt,
+      this.videoUrl,
+      this.img,
       Key? key})
       : super(key: key);
 
   @override
-  State<Posts> createState() => _PostsState();
+  State<Post> createState() => _PostState();
 }
 
-class _PostsState extends State<Posts> {
+class _PostState extends State<Post> {
   late YoutubePlayerController controller = YoutubePlayerController(
-    initialVideoId: widget.img,
+    initialVideoId: widget.videoUrl!,
     // iLnmTe5Q2Qw
     flags: const YoutubePlayerFlags(
       autoPlay: false,
       mute: false,
     ),
   );
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width / 1.05,
       padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.only(top: 15),
-      decoration: BoxDecoration(boxShadow: const [
+      margin: const EdgeInsets.only(top: 25),
+      decoration: BoxDecoration(boxShadow: [
         BoxShadow(
-            color: Colors.black12,
+            color: Colors.black12.withOpacity(0.05),
             spreadRadius: 1.5,
             blurRadius: 4,
             offset: Offset(3.0, 3.0))
@@ -64,8 +66,7 @@ class _PostsState extends State<Posts> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
                       image: DecorationImage(
-                          image: NetworkImage(widget.avatar),
-                          fit: BoxFit.cover),
+                          image: widget.avatar.image, fit: BoxFit.cover),
                     ),
                   ),
                   const SizedBox(
@@ -82,7 +83,7 @@ class _PostsState extends State<Posts> {
                         child: Text(
                           widget.name,
                           style: const TextStyle(
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w400,
                             fontSize: 14,
                             color: Colors.black,
                           ),
@@ -108,37 +109,37 @@ class _PostsState extends State<Posts> {
               )
             ],
           ),
-          space(),
-          Text(
-            widget.txt,
-          ),
-          space(),
-          InkWell(
-            onTap: () => print('you tap the post'),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(5),
-              child: AspectRatio(
-                aspectRatio: 4 / 3,
-                child: widget.video
-                    ? YoutubePlayerBuilder(
-                        player: YoutubePlayer(
-                          controller: controller,
-                          showVideoProgressIndicator: true,
-                          aspectRatio: 4 / 3,
-                        ),
-                        builder: (context, player) {
-                          return Column(
-                            children: [player],
-                          );
-                        },
-                      )
-                    : Image.network(
-                        widget.img,
-                        fit: BoxFit.cover,
-                      ),
+          if (widget.txt != null) ...[
+            space(),
+            Text(widget.txt!,
+                style: TextStyle(
+                    fontSize: 14, color: Colors.grey[800], height: 1.4))
+          ],
+          if (widget.img != null) ...[
+            space(),
+            PostMedia(
+                child: Image.asset(
+              widget.img!,
+              fit: BoxFit.cover,
+            ))
+          ],
+          if (widget.videoUrl != null) ...[
+            space(),
+            PostMedia(
+              child: YoutubePlayerBuilder(
+                player: YoutubePlayer(
+                  controller: controller,
+                  showVideoProgressIndicator: true,
+                  aspectRatio: 4 / 3,
+                ),
+                builder: (context, player) {
+                  return Column(
+                    children: [player],
+                  );
+                },
               ),
-            ),
-          ),
+            )
+          ],
           space(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

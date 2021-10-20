@@ -22,6 +22,7 @@ class Tile extends StatelessWidget {
         ListTileTheme(
           contentPadding: const EdgeInsets.only(left: 10),
           child: ExpansionTile(
+            iconColor: Theme.of(context).primaryColor,
             title: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -41,20 +42,20 @@ class Tile extends StatelessWidget {
                         margin: const EdgeInsets.only(left: 40),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
-                          border: Border.all(
-                              color: const Color.fromRGBO(33, 48, 197, 1)),
+                          border:
+                              Border.all(color: Theme.of(context).primaryColor),
                           boxShadow: const [
                             BoxShadow(color: Colors.black),
                             BoxShadow(color: Colors.white)
                           ],
                         ),
-                        child: const Center(
+                        child: Center(
                             child: Text(
                           'Main Deity',
                           style: TextStyle(
                               fontSize: 9,
                               fontWeight: FontWeight.bold,
-                              color: Color.fromRGBO(33, 48, 197, 1)),
+                              color: Theme.of(context).primaryColor),
                         )),
                       )
                     : const SizedBox(),

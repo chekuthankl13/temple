@@ -12,9 +12,7 @@ class Button3 extends StatelessWidget {
       required this.txt,
       this.maindeitie = false,
       this.clr = Colors.white,
-      this.txtclr = const Color(0XFF003870)
-      
-      })
+      this.txtclr = const Color(0XFF003870)})
       : super(key: key);
 
   @override
@@ -26,7 +24,7 @@ class Button3 extends StatelessWidget {
         onPressed: onpressed,
         child: Text(
           txt,
-          style:  TextStyle(
+          style: TextStyle(
             fontSize: 10,
             fontWeight: FontWeight.bold,
             color: txtclr,
@@ -35,8 +33,8 @@ class Button3 extends StatelessWidget {
         style: TextButton.styleFrom(
           backgroundColor: clr,
           shadowColor: Colors.black87,
-          side: const BorderSide(
-            color: Colors.grey,
+          side: BorderSide(
+            color: Theme.of(context).primaryColor,
           ),
           // elevation: 8,
           shape: RoundedRectangleBorder(

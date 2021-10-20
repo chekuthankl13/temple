@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: CustomScrollView(slivers: [
         SliverPersistentHeader(
           pinned: true,
-          delegate: CustomSliverAppBarDelegate(expandedHeight: 335),
+          delegate: CustomSliverAppBarDelegate(expandedHeight: 350),
         ),
         SliverToBoxAdapter(
           child: SingleChildScrollView(
@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         });
                       },
                       icons: SvgPicture.asset('assets/icons/Gallery.svg'),
-                      txt: 'photos',
+                      txt: 'Photos',
                     ),
                     ButtonIcon(
                       isPressed: value == 5,
@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         });
                       },
                       icons: SvgPicture.asset('assets/icons/Gallery.svg'),
-                      txt: 'videos',
+                      txt: 'Videos',
                     ),
                     const SizedBox(
                       width: 15,
@@ -153,7 +153,7 @@ class CustomSliverAppBarDelegate extends SliverPersistentHeaderDelegate {
       );
 
   @override
-  double get maxExtent => 330;
+  double get maxExtent => 345;
 
   @override
   double get minExtent => kToolbarHeight + 30;

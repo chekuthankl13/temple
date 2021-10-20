@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:temple/widgets/posts.dart';
+import 'package:temple/widgets/post.dart';
 
 class Photo extends StatefulWidget {
   const Photo({Key? key}) : super(key: key);
@@ -12,32 +12,28 @@ class _PhotoState extends State<Photo> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
-        SizedBox(
-          height: 10,
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        Posts(
-          avatar:
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU',
-          name: 'Yammarakunlgara Sree Maha ganapathy ',
-          time: '12 h',
-          txt: 'festival of light and happy',
-          img:
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAdtuPCilKq3ahxpaPCpyXT-PLWVSoJO6LLA&usqp=CAU',
+      children: [
+        // SizedBox(
+        //   height: 10,
+        // ),
+        // SizedBox(
+        //   height: 10,
+        // ),
+        Post(
+          avatar: Image.asset('assets/v3.jpeg'),
+          name: 'Kumaranallur Karthiyani Devi Temple',
+          time: '12h',
+          txt: 'Festival of light and happiness',
+          img: 'assets/aana.jpeg',
           like: '100',
           comment: '5',
         ),
-        Posts(
-          avatar:
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU',
+        Post(
+          avatar: Image.asset('assets/v3.jpeg'),
           name: 'Kumaranallur Karthiyani Devi Temple',
-          time: '12 h',
-          txt: 'karthikadeepam festival',
-          img:
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ_TDVNlkVIzqEsFV6-J1AkttLb7XirfTBrA&usqp=CAU',
+          time: '12h',
+          txt: 'Karthikadeepam festival',
+          img: 'assets/temple_1.jpeg',
           like: '100',
           comment: '5',
         ),

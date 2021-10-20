@@ -24,9 +24,31 @@ class _HeaderState extends State<Header> {
             height: 250,
             child: AspectRatio(
               aspectRatio: 16 / 8,
-              child: Image.network(
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Mh2uGXpsMV7LCDzvEts6bNRZWCApjkHalA&usqp=CAU',
+              child: Image.asset(
+                'assets/v7.jpg',
                 fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Positioned(
+            top: 239,
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              width: MediaQuery.of(context).size.width,
+              height: 105,
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.4),
+                    offset: Offset(0, -80),
+                    blurRadius: 40,
+                    spreadRadius: 20,
+                  )
+                ],
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10)),
+                color: Color(0xFFFAFAFA),
               ),
             ),
           ),
@@ -44,27 +66,12 @@ class _HeaderState extends State<Header> {
                   shadows: [
                     Shadow(
                       color: Colors.black,
+                      blurRadius: 3.0,
                     ),
-                    Shadow(
-                      color: Colors.black87,
-                    )
+                    Shadow(color: Colors.black87, blurRadius: 8)
                   ],
                   fontSize: 17,
                 ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 239,
-            child: Container(
-              padding: const EdgeInsets.all(10),
-              width: MediaQuery.of(context).size.width,
-              height: 90,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10)),
-                color: Color(0xFFFAFAFA),
               ),
             ),
           ),
@@ -87,9 +94,10 @@ class _HeaderState extends State<Header> {
               height: 90,
               width: 90,
               decoration: BoxDecoration(
-                image: const DecorationImage(
-                    image: NetworkImage(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpkR6QPCUEgyibRvLGwZ_h3xxrdTIUGG4Lw&usqp=CAU'),
+                image: DecorationImage(
+                    image: Image.asset(
+                      'assets/v3.jpeg',
+                    ).image,
                     fit: BoxFit.cover),
                 borderRadius: BorderRadius.circular(15),
                 border: Border.all(
@@ -116,6 +124,7 @@ class _HeaderState extends State<Header> {
                         icon: Icon(
                           CupertinoIcons.map,
                           color: Colors.grey[700],
+                          size: 16,
                         ),
                         label: Text(
                           'Open in Maps',
@@ -141,6 +150,7 @@ class _HeaderState extends State<Header> {
                         icon: const Icon(
                           CupertinoIcons.heart,
                           color: Colors.white,
+                          size: 16,
                         ),
                         label: const Text(
                           'Follow',

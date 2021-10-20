@@ -11,10 +11,7 @@ class AboutRow extends StatelessWidget {
   Text getText() {
     return Text(
       txt,
-      style: TextStyle(
-        fontSize: 12,
-        height: 1.2,
-      ),
+      style: TextStyle(fontSize: 12, height: 1.2, color: Colors.grey[800]),
     );
   }
 
