@@ -99,41 +99,52 @@ class _HeaderState extends State<Header> {
             ),
           ),
           Positioned(
-            top: 300,
-            left: MediaQuery.of(context).size.width / 10,
-            child: const Icon(CupertinoIcons.map),
-          ),
-          Positioned(
-            top: 304,
-            left: MediaQuery.of(context).size.width / 3.3,
-            child: Row(
-              children: const [
-                Text(
-                  '5.3 K ',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Color(0xFF616161)),
-                ),
-                SizedBox(
-                  width: 5,
-                ),
-                Text(
-                  'Followers',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF616161),
+            top: 280,
+            child: SizedBox(
+              height: 40,
+              width: MediaQuery.of(context).size.width,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(left: 40),
+                    child: Icon(CupertinoIcons.map),
                   ),
-                ),
-              ],
-            ),
-          ),
-          Positioned(
-            top: 300,
-            right: MediaQuery.of(context).size.width / 25,
-            child: const Button3(
-              onpressed: null,
-              txt: 'follow',
-              clr: Color(0XFF003870),
-              txtclr: Colors.white,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 35),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          '5.3 K ',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF616161)),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          'Followers',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF616161),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(right: 3),
+                    child: Button3(
+                      onpressed: null,
+                      txt: 'follow',
+                      clr: Color(0XFF003870),
+                      txtclr: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
