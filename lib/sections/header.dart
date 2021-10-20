@@ -104,14 +104,14 @@ class _HeaderState extends State<Header> {
             child: const Icon(CupertinoIcons.map),
           ),
           Positioned(
-            top: 300,
+            top: 304,
             left: MediaQuery.of(context).size.width / 3.3,
             child: Row(
               children: const [
                 Text(
-                  '5.3 k ',
+                  '5.3 K ',
                   style: TextStyle(
-                      fontWeight: FontWeight.w300, color: Color(0xFF616161)),
+                      fontWeight: FontWeight.bold, color: Color(0xFF616161)),
                 ),
                 SizedBox(
                   width: 5,
@@ -119,7 +119,7 @@ class _HeaderState extends State<Header> {
                 Text(
                   'Followers',
                   style: TextStyle(
-                    fontWeight: FontWeight.w300,
+                    fontWeight: FontWeight.bold,
                     color: Color(0xFF616161),
                   ),
                 ),

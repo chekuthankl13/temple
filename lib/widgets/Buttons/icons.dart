@@ -22,14 +22,19 @@ class ButtonIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(left: 20),
+      // color: Colors.yellow,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          const SizedBox(
+            height: 10,
+          ),
           ClayContainer(
             height: 50,
             width: 50,
-            depth: 35,
-            spread: 15,
+            depth: 55,
+            spread: 5,
+            emboss: true,
             curveType: CurveType.concave,
             borderRadius: 15,
             color: Colors.grey[100],
