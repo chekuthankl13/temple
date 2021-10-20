@@ -74,13 +74,14 @@ class _HeaderState extends State<Header> {
             child: const Text(
               '5.7K Followers',
               style: TextStyle(
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w400,
+                fontSize: 12,
                 color: Color(0xFF616161),
               ),
             ),
           ),
           Positioned(
-            top: 175,
+            top: 180,
             left: MediaQuery.of(context).size.width / 25,
             child: Container(
               height: 90,
@@ -103,50 +104,97 @@ class _HeaderState extends State<Header> {
             child: SizedBox(
               height: 40,
               width: MediaQuery.of(context).size.width,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 50),
-                    child: Icon(CupertinoIcons.map),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        // Text(
-                        //   '5.3K',
-                        //   style: TextStyle(
-                        //       fontWeight: FontWeight.bold,
-                        //       fontSize: 14,
-                        //       color: Color(0xFF616161)),
-                        // ),
-                        // SizedBox(
-                        //   width: 3,
-                        // ),
-                        // Text(
-                        //   'Followers',
-                        //   style: TextStyle(
-                        //     fontWeight: FontWeight.bold,
-                        //     fontSize: 14,
-                        //     color: Color(0xFF616161),
-                        //   ),
-                        // ),
-                      ],
+              child: Padding(
+                padding: const EdgeInsets.only(left: 18, right: 18),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      // width: MediaQuery.of(context).size.width,
+                      child: TextButton.icon(
+                        onPressed: () {},
+                        icon: Icon(
+                          CupertinoIcons.map,
+                          color: Colors.grey[700],
+                        ),
+                        label: Text(
+                          'Open in Maps',
+                          style: TextStyle(
+                            color: Colors.grey[700],
+                            // fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        style: TextButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                            backgroundColor: Colors.grey[200]),
+                      ),
                     ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(right: 12, top: 1),
-                    child: Button3(
-                      onpressed: null,
-                      txt: 'Follow',
-                      clr: Color(0XFF003870),
-                      txtclr: Colors.white,
+                    const SizedBox(
+                      width: 10,
                     ),
-                  ),
-                ],
+                    Expanded(
+                      // width: MediaQuery.of(context).size.width / 2,
+                      child: TextButton.icon(
+                        onPressed: () {},
+                        icon: const Icon(
+                          CupertinoIcons.heart,
+                          color: Colors.white,
+                        ),
+                        label: const Text(
+                          'Follow',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        style: TextButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                            backgroundColor: Theme.of(context).primaryColor),
+                      ),
+                    ),
+                  ],
+                ),
               ),
+              // const Padding(
+              //   padding: EdgeInsets.only(left: 50),
+              //   child: Icon(CupertinoIcons.map),
+              // ),
+              // Padding(
+              //   padding: const EdgeInsets.only(left: 16),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.center,
+              //     children: const [
+              //       // Text(
+              //       //   '5.3K',
+              //       //   style: TextStyle(
+              //       //       fontWeight: FontWeight.bold,
+              //       //       fontSize: 14,
+              //       //       color: Color(0xFF616161)),
+              //       // ),
+              //       // SizedBox(
+              //       //   width: 3,
+              //       // ),
+              //       // Text(
+              //       //   'Followers',
+              //       //   style: TextStyle(
+              //       //     fontWeight: FontWeight.bold,
+              //       //     fontSize: 14,
+              //       //     color: Color(0xFF616161),
+              //       //   ),
+              //       // ),
+              //     ],
+              //   ),
+              // ),
+              // const Padding(
+              //   padding: EdgeInsets.only(right: 12, top: 1),
+              //   child: Button3(
+              //     onpressed: null,
+              //     txt: 'Follow',
+              //     clr: Color(0XFF003870),
+              //     txtclr: Colors.white,
+              //   ),
+              // ),
             ),
           ),
         ],
