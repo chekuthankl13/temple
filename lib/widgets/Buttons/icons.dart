@@ -47,30 +47,26 @@ class _ButtonIconState extends State<ButtonIcon>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SizedBox(
-            height: 10,
-          ),
-          ClayContainer(
-            height: 50,
-            width: 50,
-            depth: 20,
-            spread: 3,
-            emboss: true,
-            curveType: widget.isPressed ? CurveType.concave : CurveType.convex,
-            borderRadius: 15,
-            color: const Color(0xFFF5F5F5),
-            child: Container(
-              decoration: BoxDecoration(
-                // color: clr,
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Center(
-                child: IconButton(
-                  onPressed: widget.onPressed,
-                  icon: widget.icons,
-                  // splashColor: Colors.red,
-                ),
-              ),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(color: Colors.grey.shade200, width: 1),
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+              boxShadow: [
+                if (widget.isPressed)
+                  BoxShadow(
+                    color: Colors.black12.withOpacity(0.2),
+                    blurRadius: 10,
+                    spreadRadius: 0.0,
+                    offset: Offset(0, 4.0), // shadow direction: bottom right
+                  )
+              ],
+            ),
+            child: IconButton(
+              onPressed: widget.onPressed,
+              icon: widget.icons,
+              splashColor: Colors.transparent,
+              // splashColor: Colors.red,
             ),
           ),
           const SizedBox(
@@ -78,7 +74,11 @@ class _ButtonIconState extends State<ButtonIcon>
           ),
           Text(
             widget.txt,
-            style: const TextStyle(fontSize: 10),
+            style: TextStyle(
+                fontSize: 10,
+                color: widget.isPressed
+                    ? Theme.of(context).primaryColor
+                    : Colors.black),
           ),
         ],
       ),
