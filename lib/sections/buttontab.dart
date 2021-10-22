@@ -10,7 +10,7 @@ class ButtonTabs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // padding: const EdgeInsets.only(top: 10),
-      // color: const Color(0xFF000000),
+      color: Colors.grey[50],
       height: 85,
       child: ListView(
         scrollDirection: Axis.horizontal,

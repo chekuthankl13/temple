@@ -23,8 +23,6 @@ class _MyHomePageState extends State<MyHomePage> {
   late final ScrollController _scrollController;
 
   bool sliverPersistentHeader = false;
-  
-
 
   @override
   void initState() {
@@ -59,82 +57,81 @@ class _MyHomePageState extends State<MyHomePage> {
           delegate: CustomSliverAppBarDelegate(expandedHeight: 350),
         ),
         SliverPersistentHeader(
-            pinned: sliverPersistentHeader ? true : false,
-            delegate: PersistentButton(
-              widget: ButtonTabs(
-                  children: [
-                    ButtonIcon(
-                      isPressed: value == 0,
-                      onPressed: () {
-                        setState(() {
-                          value = 0;
-                        });
-                      },
-                      icons: SvgPicture.asset('assets/icons/Update.svg'),
-                      txt: 'Updates',
-                    ),
-                    ButtonIcon(
-                      isPressed: value == 1,
-                      onPressed: () {
-                        setState(() {
-                          value = 1;
-                        });
-                      },
-                      icons: SvgPicture.asset('assets/icons/Prathista.svg'),
-                      txt: 'Deities',
-                    ),
-                    ButtonIcon(
-                      isPressed: value == 2,
-                      onPressed: () {
-                        setState(() {
-                          value = 2;
-                        });
-                      },
-                      icons: SvgPicture.asset('assets/icons/Offering.svg'),
-                      txt: 'Offerings',
-                    ),
-                    ButtonIcon(
-                      isPressed: value == 3,
-                      onPressed: () {
-                        setState(() {
-                          value = 3;
-                        });
-                      },
-                      icons: SvgPicture.asset('assets/icons/Contact.svg'),
-                      txt: 'About',
-                    ),
-                    ButtonIcon(
-                      isPressed: value == 4,
-                      onPressed: () {
-                        setState(() {
-                          value = 4;
-                        });
-                      },
-                      icons: SvgPicture.asset('assets/icons/Gallery.svg'),
-                      txt: 'Photos',
-                    ),
-                    ButtonIcon(
-                      isPressed: value == 5,
-                      onPressed: () {
-                        setState(() {
-                          value = 5;
-                        });
-                      },
-                      icons: SvgPicture.asset('assets/icons/Gallery.svg'),
-                      txt: 'Videos',
-                    ),
-                    const SizedBox(
-                      width: 15,
-                    )
-                  ],
+          pinned: sliverPersistentHeader ? true : false,
+          delegate: PersistentButton(
+            widget: ButtonTabs(
+              children: [
+                ButtonIcon(
+                  isPressed: value == 0,
+                  onPressed: () {
+                    setState(() {
+                      value = 0;
+                    });
+                  },
+                  icons: SvgPicture.asset('assets/icons/Update.svg'),
+                  txt: 'Updates',
                 ),
+                ButtonIcon(
+                  isPressed: value == 1,
+                  onPressed: () {
+                    setState(() {
+                      value = 1;
+                    });
+                  },
+                  icons: SvgPicture.asset('assets/icons/Prathista.svg'),
+                  txt: 'Deities',
+                ),
+                ButtonIcon(
+                  isPressed: value == 2,
+                  onPressed: () {
+                    setState(() {
+                      value = 2;
+                    });
+                  },
+                  icons: SvgPicture.asset('assets/icons/Offering.svg'),
+                  txt: 'Offerings',
+                ),
+                ButtonIcon(
+                  isPressed: value == 3,
+                  onPressed: () {
+                    setState(() {
+                      value = 3;
+                    });
+                  },
+                  icons: SvgPicture.asset('assets/icons/Contact.svg'),
+                  txt: 'About',
+                ),
+                ButtonIcon(
+                  isPressed: value == 4,
+                  onPressed: () {
+                    setState(() {
+                      value = 4;
+                    });
+                  },
+                  icons: SvgPicture.asset('assets/icons/Gallery.svg'),
+                  txt: 'Photos',
+                ),
+                ButtonIcon(
+                  isPressed: value == 5,
+                  onPressed: () {
+                    setState(() {
+                      value = 5;
+                    });
+                  },
+                  icons: SvgPicture.asset('assets/icons/Gallery.svg'),
+                  txt: 'Videos',
+                ),
+                const SizedBox(
+                  width: 15,
+                )
+              ],
             ),
-            ),
+          ),
+        ),
         SliverToBoxAdapter(
           child: SingleChildScrollView(
             child: Column(
               children: [
-                
                 value == 0
                     ? const Updates()
                     : value == 1
@@ -216,10 +213,10 @@ class PersistentButton extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get maxExtent => 110;
+  double get maxExtent => 85;
 
   @override
-  double get minExtent => 110;
+  double get minExtent => 85;
 
   @override
   bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
