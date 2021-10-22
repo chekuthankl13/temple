@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:temple/sections/about.dart';
 import 'package:temple/sections/buttontab.dart';
@@ -8,7 +9,6 @@ import 'package:temple/sections/offerings.dart';
 import 'package:temple/sections/photos.dart';
 import 'package:temple/sections/update.dart';
 import 'package:temple/sections/videos.dart';
-
 import 'package:temple/widgets/Buttons/icons.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -20,23 +20,48 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int value = 0;
+  late final ScrollController _scrollController;
+
+  bool sliverPersistentHeader = false;
+  
+
+
+  @override
+  void initState() {
+    _scrollController = ScrollController();
+    _scrollController.addListener(() {
+      if (_scrollController.position.userScrollDirection ==
+          ScrollDirection.reverse) {
+        setState(() {
+          sliverPersistentHeader = false;
+        });
+      } else {
+        setState(() {
+          sliverPersistentHeader = true;
+        });
+      }
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    var red = Colors.blue.shade50;
-    var white = const Color(0xFFF5F5F5);
     return Scaffold(
-      // backgroundColor: Colors.amber,
-      body: CustomScrollView(slivers: [
+      body: CustomScrollView(controller: _scrollController, slivers: [
         SliverPersistentHeader(
           pinned: true,
           delegate: CustomSliverAppBarDelegate(expandedHeight: 350),
         ),
-        SliverToBoxAdapter(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                ButtonTabs(
+        SliverPersistentHeader(
+            pinned: sliverPersistentHeader ? true : false,
+            delegate: PersistentButton(
+              widget: ButtonTabs(
                   children: [
                     ButtonIcon(
                       isPressed: value == 0,
@@ -103,6 +128,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     )
                   ],
                 ),
+            ),
+            ),
+        SliverToBoxAdapter(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                
                 value == 0
                     ? const Updates()
                     : value == 1
@@ -171,4 +203,26 @@ class CustomSliverAppBarDelegate extends SliverPersistentHeaderDelegate {
         opacity: disappear(shrinkOffset),
         child: const Header(),
       );
+}
+
+class PersistentButton extends SliverPersistentHeaderDelegate {
+  final Widget widget;
+  PersistentButton({required this.widget});
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return widget;
+  }
+
+  @override
+  double get maxExtent => 110;
+
+  @override
+  double get minExtent => 110;
+
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
+    return true;
+  }
 }
