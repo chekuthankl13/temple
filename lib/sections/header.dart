@@ -53,25 +53,47 @@ class _HeaderState extends State<Header> {
             ),
           ),
           Positioned(
-            top: 190,
+            top: 186,
             left: MediaQuery.of(context).size.width / 3.3,
             child: SizedBox(
               width: MediaQuery.of(context).size.width / 1.5,
               height: 80,
-              child: const Text(
-                'Kumaranallur Karthiyani Devi Temple ',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  shadows: [
-                    Shadow(
-                      color: Colors.black,
-                      blurRadius: 3.0,
-                    ),
-                    Shadow(color: Colors.black87, blurRadius: 8)
-                  ],
-                  fontSize: 17,
-                ),
+              child: Column(
+                children: [
+                  Row(
+                    children: const [
+                      Expanded(
+                        child: Text(
+                          'Kumaranallur Karthiyani Devi Temple ',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            shadows: [
+                              Shadow(
+                                color: Colors.black,
+                                blurRadius: 3.0,
+                              ),
+                              Shadow(color: Colors.black87, blurRadius: 8)
+                            ],
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        'Kochi, Kerala',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 11,
+                            color: Colors.white,
+                            height: 1.5),
+                      )
+                    ],
+                  )
+                ],
               ),
             ),
           ),
