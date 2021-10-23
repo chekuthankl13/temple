@@ -18,24 +18,46 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   int value = 0;
   late final ScrollController _scrollController;
 
   bool sliverPersistentHeader = false;
 
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
   @override
   void initState() {
+    _controller =
+        AnimationController(vsync: this, duration: const Duration(milliseconds: 1))
+          ..forward();
+    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
     _scrollController = ScrollController();
     _scrollController.addListener(() {
       if (_scrollController.position.userScrollDirection ==
           ScrollDirection.reverse) {
         setState(() {
           sliverPersistentHeader = false;
+          if (sliverPersistentHeader == false) {
+            _controller =
+                AnimationController(vsync: this, duration: const  Duration(seconds: 1))
+                  ..forward();
+            _animation = CurvedAnimation(
+                parent: _controller, curve: Curves.fastOutSlowIn);
+          }
         });
       } else {
         setState(() {
           sliverPersistentHeader = true;
+
+          if (sliverPersistentHeader == true) {
+            _controller =
+                AnimationController(vsync: this, duration: const Duration(seconds: 1))
+                  ..forward();
+            _animation = CurvedAnimation(
+                parent: _controller, curve: Curves.fastOutSlowIn);
+          }
         });
       }
     });
@@ -45,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void dispose() {
     _scrollController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -59,72 +82,75 @@ class _MyHomePageState extends State<MyHomePage> {
         SliverPersistentHeader(
           pinned: sliverPersistentHeader ? true : false,
           delegate: PersistentButton(
-            widget: ButtonTabs(
-              children: [
-                ButtonIcon(
-                  isPressed: value == 0,
-                  onPressed: () {
-                    setState(() {
-                      value = 0;
-                    });
-                  },
-                  icons: SvgPicture.asset('assets/icons/Update.svg'),
-                  txt: 'Updates',
-                ),
-                ButtonIcon(
-                  isPressed: value == 1,
-                  onPressed: () {
-                    setState(() {
-                      value = 1;
-                    });
-                  },
-                  icons: SvgPicture.asset('assets/icons/Prathista.svg'),
-                  txt: 'Deities',
-                ),
-                ButtonIcon(
-                  isPressed: value == 2,
-                  onPressed: () {
-                    setState(() {
-                      value = 2;
-                    });
-                  },
-                  icons: SvgPicture.asset('assets/icons/Offering.svg'),
-                  txt: 'Offerings',
-                ),
-                ButtonIcon(
-                  isPressed: value == 3,
-                  onPressed: () {
-                    setState(() {
-                      value = 3;
-                    });
-                  },
-                  icons: SvgPicture.asset('assets/icons/Contact.svg'),
-                  txt: 'About',
-                ),
-                ButtonIcon(
-                  isPressed: value == 4,
-                  onPressed: () {
-                    setState(() {
-                      value = 4;
-                    });
-                  },
-                  icons: SvgPicture.asset('assets/icons/Gallery.svg'),
-                  txt: 'Photos',
-                ),
-                ButtonIcon(
-                  isPressed: value == 5,
-                  onPressed: () {
-                    setState(() {
-                      value = 5;
-                    });
-                  },
-                  icons: SvgPicture.asset('assets/icons/Gallery.svg'),
-                  txt: 'Videos',
-                ),
-                const SizedBox(
-                  width: 15,
-                )
-              ],
+            widget: FadeTransition(
+              opacity: _animation,
+              child: ButtonTabs(
+                children: [
+                  ButtonIcon(
+                    isPressed: value == 0,
+                    onPressed: () {
+                      setState(() {
+                        value = 0;
+                      });
+                    },
+                    icons: SvgPicture.asset('assets/icons/Update.svg'),
+                    txt: 'Updates',
+                  ),
+                  ButtonIcon(
+                    isPressed: value == 1,
+                    onPressed: () {
+                      setState(() {
+                        value = 1;
+                      });
+                    },
+                    icons: SvgPicture.asset('assets/icons/Prathista.svg'),
+                    txt: 'Deities',
+                  ),
+                  ButtonIcon(
+                    isPressed: value == 2,
+                    onPressed: () {
+                      setState(() {
+                        value = 2;
+                      });
+                    },
+                    icons: SvgPicture.asset('assets/icons/Offering.svg'),
+                    txt: 'Offerings',
+                  ),
+                  ButtonIcon(
+                    isPressed: value == 3,
+                    onPressed: () {
+                      setState(() {
+                        value = 3;
+                      });
+                    },
+                    icons: SvgPicture.asset('assets/icons/Contact.svg'),
+                    txt: 'About',
+                  ),
+                  ButtonIcon(
+                    isPressed: value == 4,
+                    onPressed: () {
+                      setState(() {
+                        value = 4;
+                      });
+                    },
+                    icons: SvgPicture.asset('assets/icons/Gallery.svg'),
+                    txt: 'Photos',
+                  ),
+                  ButtonIcon(
+                    isPressed: value == 5,
+                    onPressed: () {
+                      setState(() {
+                        value = 5;
+                      });
+                    },
+                    icons: SvgPicture.asset('assets/icons/Gallery.svg'),
+                    txt: 'Videos',
+                  ),
+                  const SizedBox(
+                    width: 15,
+                  )
+                ],
+              ),
             ),
           ),
         ),
