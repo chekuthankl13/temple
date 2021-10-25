@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           sliverPersistentHeader = false;
           if (sliverPersistentHeader == false) {
             _controller = AnimationController(
-                vsync: this, duration: const Duration(seconds: 3))
+                vsync: this, duration: const Duration(milliseconds: 500))
               ..forward();
             _animation = CurvedAnimation(
                 parent: _controller, curve: Curves.fastOutSlowIn);
