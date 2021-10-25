@@ -29,9 +29,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    _controller =
-        AnimationController(vsync: this, duration: const Duration(milliseconds: 1))
-          ..forward();
+    _controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 1))
+      ..forward();
     _animation = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
     _scrollController = ScrollController();
     _scrollController.addListener(() {
@@ -40,24 +40,17 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         setState(() {
           sliverPersistentHeader = false;
           if (sliverPersistentHeader == false) {
-            _controller =
-                AnimationController(vsync: this, duration: const  Duration(seconds: 1))
-                  ..forward();
+            _controller = AnimationController(
+                vsync: this, duration: const Duration(seconds: 3))
+              ..forward();
             _animation = CurvedAnimation(
                 parent: _controller, curve: Curves.fastOutSlowIn);
+            print('false');
           }
         });
       } else {
         setState(() {
           sliverPersistentHeader = true;
-
-          if (sliverPersistentHeader == true) {
-            _controller =
-                AnimationController(vsync: this, duration: const Duration(seconds: 1))
-                  ..forward();
-            _animation = CurvedAnimation(
-                parent: _controller, curve: Curves.fastOutSlowIn);
-          }
         });
       }
     });

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:temple/widgets/post.dart';
 
 class Videos extends StatefulWidget {
   const Videos({Key? key}) : super(key: key);
